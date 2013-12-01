@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>0</string>
+		<key>title</key>
+		<string>By Fisrt =</string>
+		<key>shortcut</key>
+		<string>cmd+shift+x</string>
+		<key>patterns</key>
+		<array>
+			<dict>
+				<key>string</key>
+				<string>^\\s*</string>
+				<key>position</key>
+				<integer>0</integer>
+				<key>tailMode</key>
+				<integer>0</integer>
+				<key>headMode</key>
+				<integer>0</integer>
+				<key>matchMode</key>
+				<integer>0</integer>
+				<key>control</key>
+				<dict>
+					<key>needPadding</key>
+					<true/>
+					<key>paddingString</key>
+					<string> </string>
+					<key>string</key>
+					<string></string>
+					<key>isMatchpadding</key>
+					<false/>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\\s*(?&lt;=[\\w\\s])=(?=[\\w\\s])\\s*</string>
+				<key>position</key>
+				<integer>0</integer>
+				<key>tailMode</key>
+				<integer>0</integer>
+				<key>headMode</key>
+				<integer>0</integer>
+				<key>matchMode</key>
+				<integer>0</integer>
+				<key>control</key>
+				<dict>
+					<key>needPadding</key>
+					<true/>
+					<key>paddingString</key>
+					<string> </string>
+					<key>string</key>
+					<string></string>
+					<key>isMatchpadding</key>
+					<false/>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

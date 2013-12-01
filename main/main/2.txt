@@ -1,0 +1,20 @@
+//
+//  XAlignPattern.m
+//  main
+//
+//  Created by QFish on 11/30/13.
+//  Copyright (c) 2013 net.qfish. All rights reserved.
+//
+
+#define kPatterns                @"patterns"
+#define kPatternID                    @"id"
+#define kPatternHeadMode              @"headMode"
+#define kPatternTailMode              @"tailMode"
+#define kPatternMatchMode             @"matchMode"
+#define kPatternString                @"string"
+#define kPatternControl               @"control"
+#define kPatternControlString         @"string"
+#define kPatternControlNeedTrim       @"needTrim"
+#define kPatternControlNeedPadding    @"needPadding"
+#define kPatternControlPaddingString  @"paddingString"
+#define kPatternControlIsMatchPadding @"isMatchPadding"

@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>id</key>
+		<string>0</string>
+		<key>title</key>
+		<string>By Fisrt =</string>
+		<key>description</key>
+		<string></string>
+		<key>shortcut</key>
+		<dict>
+			<key>key</key>
+			<string>x</string>
+			<key>mask</key>
+			<string>cmd+shift</string>
+		</dict>
+		<key>patterns</key>
+		<array>
+			<dict>
+				<key>string</key>
+				<string>^\s*</string>
+				<key>tailMode</key>
+				<integer>2</integer>
+				<key>matchMode</key>
+				<integer>1</integer>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string></string>
+					<key>needPadding</key>
+					<true/>
+					<key>paddingString</key>
+					<string> </string>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\s*(?&lt;=[\w\s])=(?=[\w\s])\s*</string>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string> = </string>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>2</string>
+		<key>title</key>
+		<string>Define     Group</string>
+		<key>patterns</key>
+		<array>
+			<dict>
+				<key>string</key>
+				<string>^\s*#define\s+</string>
+				<key>tailMode</key>
+				<integer>2</integer>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string>#define </string>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>(?&lt;!#define\*)\s+(?![\*/])</string>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string> </string>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>3</string>
+		<key>title</key>
+		<string>Property  Group</string>
+		<key>patterns</key>
+		<array>
+			<dict>
+				<key>string</key>
+				<string>^\s*@property\s*</string>
+				<key>tailMode</key>
+				<integer>2</integer>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string>@property </string>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>(?&lt;=\))\s*(?=\w)</string>
+				<key>tailMode</key>
+				<integer>2</integer>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string> </string>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>(?&lt;=\w)\s*</string>
+				<key>tailMode</key>
+				<integer>2</integer>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string> </string>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>[\s\*]*\w+</string>
+				<key>control</key>
+				<dict>
+					<key>format</key>
+					<string>%@</string>
+					<key>notFoundFormat</key>
+					<string>  %@</string>
+					<key>needTrim</key>
+					<true/>
+					<key>needFormatWhenFound</key>
+					<true/>
+					<key>foundString</key>
+					<string>*</string>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>id</key>
+		<string>4</string>
+		<key>title</key>
+		<string>Variables Group</string>
+		<key>patterns</key>
+		<array>
+			<dict>
+				<key>string</key>
+				<string>^\s*</string>
+				<key>tailMode</key>
+				<integer>2</integer>
+				<key>matchMode</key>
+				<integer>1</integer>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string></string>
+					<key>needPadding</key>
+					<true/>
+					<key>paddingString</key>
+					<string> </string>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>[\s\*]+</string>
+				<key>control</key>
+				<dict>
+					<key>foundString</key>
+					<string>*</string>
+					<key>needFormatWhenFound</key>
+					<true/>
+					<key>notFoundFormat</key>
+					<string> %@</string>
+					<key>format</key>
+					<string> %@ </string>
+					<key>needTrim</key>
+					<true/>
+				</dict>
+			</dict>
+		</array>
+	</dict>
+</array>
+</plist>

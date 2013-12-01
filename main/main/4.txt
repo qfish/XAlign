@@ -1,0 +1,4 @@
+	@property (nonatomic, retain) UITextField * textView;
+@property (nonatomic, retain) UIButton editButton;
+@property (nonatomic, assign) int editButton;
+@property (nonatomic, copy) UIButton    * editButton;

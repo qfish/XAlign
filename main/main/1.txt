@@ -1,0 +1,24 @@
+    a = b
+    a = b
+    a = b
+
+		   if ( a==b )
+		{
+			
+		}
+
+        self.navigationBarShown = YES;
+        self.navigationBarTitle = @"B2 PublishBoard iPhone";
+        self.navigationBarLeft  = [UIImage imageNamed:@"menu-button.png"];
+
+        self.list.lineCount         = 1;
+        self.list.animationDuration = 0.25f;
+        self.list.baseInsets        = bee.ui.config.baseInsets;
+
+		self.list.whenReloading = ^
+		{
+			self.list.total = 1;
+
+			BeeUIScrollItem * item = self.list.items[0];
+			item.clazz = [BeeUICell class];
+		};

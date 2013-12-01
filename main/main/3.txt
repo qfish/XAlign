@@ -1,0 +1,12 @@
+	NSEvent            * _currentEvent;
+	id     		_windowList;
+	id                  _keyWindow;
+	id                  _mainWindow;
+	id                  _delegate;
+	id            	*_hiddenList;
+	int                 _hiddenCount;
+	NSInteger               _context;
+	void*_appleEventSuspensionID;
+	__weak id			_previousKeyWindow;
+	short               _unusedApp;
+	short               _running;
