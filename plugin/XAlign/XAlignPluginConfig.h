@@ -10,4 +10,5 @@
 
 @interface XAlignPluginConfig : NSObject
 + (void)setupMenu;
++ (void)setupPatternManger;
 @end

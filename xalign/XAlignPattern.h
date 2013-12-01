@@ -40,9 +40,15 @@ typedef NSString * (^XAlignPatternControlBlockUS)(NSUInteger padding, NSString *
 
 AS_SINGLETON( XAlignPatternManager );
 
+@property (nonatomic, strong) NSMutableDictionary * specifiers;
+
++ (void)setupWithRawArray:(NSArray *)array;
+
 + (NSArray *)patternGroupsWithContentsOfFile:(NSString *)name;
 
 + (NSArray *)patternGroupsWithRawArray:(NSArray *)array;
+
++ (NSArray *)patternGroupMatchWithString:(NSString *)string;
 + (NSArray *)patternGroupWithDictinary:(NSDictionary *)dictionary;
 
 @end

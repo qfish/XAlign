@@ -1371,12 +1371,12 @@
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpU-Fd-yjH">
                         <rect key="frame" x="6" y="161" width="346" height="25"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                        <popUpButtonCell key="cell" type="roundTextured" title="选择一个格式化模板" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" pullsDown="YES" selectedItem="p1S-GL-haI" id="3Mh-7d-5Xb">
+                        <popUpButtonCell key="cell" type="roundTextured" title="Choose a foramt Template" bezelStyle="texturedRounded" imagePosition="overlaps" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="border" inset="2" pullsDown="YES" selectedItem="p1S-GL-haI" id="3Mh-7d-5Xb">
                             <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                             <font key="font" metaFont="menu"/>
                             <menu key="menu" title="OtherViews" id="PRh-Q6-fo8">
                                 <items>
-                                    <menuItem title="选择一个格式化模板" state="on" hidden="YES" id="p1S-GL-haI"/>
+                                    <menuItem title="Choose a foramt Template" state="on" hidden="YES" id="p1S-GL-haI"/>
                                     <menuItem title="Item 2" id="gy6-ve-C3g"/>
                                     <menuItem title="Item 3" id="NEw-LX-IRb"/>
                                 </items>

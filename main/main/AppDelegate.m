@@ -21,7 +21,7 @@
 //	[self test5];
 	
 	NSArray * pgs = [XAlignPatternManager patternGroupsWithContentsOfFile:@"patterns"];
-	NSString * replace = [[self testFile:@"4.txt"] stringByAligningWithPatterns:pgs[2]];
+	NSString * replace = [[self testFile:@"1.txt"] stringByAligningWithPatterns:pgs[0]];
 
     NSLog( @"\n%@", replace );
 	

@@ -16,6 +16,7 @@ AS_SINGLETON( XAlignPlugin );
 @property (nonatomic, strong) NSWindowController * helpWindow;
 
 - (void)showHelp;
+- (void)autoAlign;
 - (void)align:(NSMenuItem *)sender;
 
 @end

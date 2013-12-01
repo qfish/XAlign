@@ -8,6 +8,7 @@
 
 #define kPatterns                          @"patterns"
 #define kPatternID                         @"id"
+#define kPatternType                       @"type"
 #define kPatternHeadMode                   @"headMode"
 #define kPatternTailMode                   @"tailMode"
 #define kPatternMatchMode                  @"matchMode"
@@ -75,14 +76,66 @@ DEF_SINGLETON( XAlignPatternManager );
     self = [super init];
     if (self) {
         self.cache = [NSMutableDictionary dictionary];
+		self.specifiers = [NSMutableDictionary dictionary];
     }
     return self;
 }
 
+#pragma mark - setup
+
++ (void)setupWithRawArray:(NSArray *)array
+{
+	[self setupSpecifiersWithRawArray:array];
+}
+
+#pragma mark - spectifier
+
++ (NSArray *)setupSpecifiersWithRawArray:(NSArray *)array
+{
+	if ( !array )
+		return nil;
+	
+	for ( NSDictionary * item in array )
+	{
+		NSString * spec = item[@"specifier"];
+		
+		if ( spec )
+		{
+			[XAlignPatternManager sharedInstance].specifiers[spec] = item;
+		}
+	}
+	
+	return nil;
+}
+
++ (NSDictionary *)rawPatternWithString:(NSString *)string
+{
+	NSDictionary * specifiers = [XAlignPatternManager sharedInstance].specifiers;
+	
+	for ( NSString * spec in specifiers.allKeys )
+	{
+		if ( NSNotFound != [string rangeOfString:spec].location )
+		{
+			return specifiers[spec];
+		}
+	}
+	
+	return nil;
+}
+
++ (NSArray *)patternGroupMatchWithString:(NSString *)string
+{
+	NSDictionary * dict = [self rawPatternWithString:string];
+	return [self patternGroupWithDictinary:dict];
+}
+
+#pragma mark - patternGroup
+
 + (NSArray *)patternGroupsWithContentsOfFile:(NSString *)name
 {
 	NSString * filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
-    return [self patternGroupsWithRawArray:[NSArray arrayWithContentsOfFile:filePath]];
+	NSArray * rawArray = [NSArray arrayWithContentsOfFile:filePath];
+    return [self patternGroupsWithRawArray:rawArray];
 }
 
 + (NSArray *)patternGroupsWithRawArray:(NSArray *)array
@@ -108,6 +161,9 @@ DEF_SINGLETON( XAlignPatternManager );
 + (NSArray *)patternGroupWithDictinary:(NSDictionary *)dictionary
 {
 	NSNumber * key = dictionary[kPatternID];
+	
+	if ( !key )
+		return nil;
 	
 	NSMutableArray * patternGroup = [XAlignPatternManager sharedInstance].cache[key];
 	

@@ -56,6 +56,7 @@ DEF_SINGLETON( XAlignPlugin );
 - (void)applicationDidFinishLaunching:(NSNotification *)notification
 {
     [XAlignPluginConfig setupMenu];
+    [XAlignPluginConfig setupPatternManger];
 }
 
 #pragma mark - actions
@@ -81,7 +82,7 @@ DEF_SINGLETON( XAlignPlugin );
 		
         if ( !self.selectedRange.length )
         {
-            NSLog(@"has textview, no selecton");
+            XAlignLog(@"has textview, no selecton");
             self.selection = nil;
             return;
         }
@@ -97,20 +98,40 @@ DEF_SINGLETON( XAlignPlugin );
     }
 }
 
-- (void)align:(NSMenuItem *)sender
+- (void)autoAlign
 {
     [self updateSelection];
 	
-	NSArray * patternGroup = [XAlignPatternManager patternGroupWithDictinary:sender.representedObject];
+	if ( !self.selection )
+		return;
 	
-	NSLog( @"%@", patternGroup );
+	NSArray * patternGroup = [XAlignPatternManager patternGroupMatchWithString:self.selection];
 	
 	if ( !patternGroup )
 		return;
 	
     NSString * replace = [self.selection stringByAligningWithPatterns:patternGroup];
+	
+    if ( replace )
+    {
+        [SharedXcode replaceCharactersInRange:self.selectedRange withString:replace];
+    }
+	
+}
 
-	NSLog( @"%@", replace );
+- (void)align:(NSMenuItem *)sender
+{
+    [self updateSelection];
+	
+	if ( !self.selection )
+		return;
+		
+	NSArray * patternGroup = [XAlignPatternManager patternGroupWithDictinary:sender.representedObject];
+	
+	if ( !patternGroup )
+		return;
+	
+    NSString * replace = [self.selection stringByAligningWithPatterns:patternGroup];
 	
     if ( replace )
     {

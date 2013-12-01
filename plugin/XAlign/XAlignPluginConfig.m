@@ -6,14 +6,17 @@
 //  Copyright (c) 2013 net.qfish. All rights reserved.
 //
 
-#define kPatternFile              @"patterns"
-#define kPatternTitle             @"title"
-#define kPatternShortcut          @"shortcut"
-#define kPatternShortcutKey       @"key"
-#define kPatternShortcutMask      @"mask"
-#define kPatternShortcutMaskCmd   @"cmd"
-#define kPatternShortcutMaskCtrl  @"ctrl"
-#define kPatternShortcutMaskShift @"shift"
+#define kMenuFile              @"patterns"
+#define kMenuType              @"type"
+#define kMenuTitle             @"title"
+#define kMenuSelector          @"selector"
+#define kMenuShortcut          @"shortcut"
+#define kMenuShortcutKey       @"key"
+#define kMenuShortcutMask      @"mask"
+#define kMenuShortcutMaskCmd   @"cmd"
+#define kMenuShortcutMaskCtrl  @"ctrl"
+#define kMenuShortcutMaskShift @"shift"
+#define kMenuShortcutMaskShift @"shift"
 
 #import "XAlignPlugin.h"
 #import "XAlignPattern.h"
@@ -23,8 +26,15 @@
 
 + (NSArray *)items
 {
-	NSString * filePath = [[XAlignPlugin sharedInstance].bundle pathForResource:kPatternFile ofType:@"plist"];
-	return [NSArray arrayWithContentsOfFile:filePath];
+	static NSArray * __items = nil;
+	
+	if ( __items == nil )
+	{
+		NSString * filePath = [[XAlignPlugin sharedInstance].bundle pathForResource:kMenuFile ofType:@"plist"];
+		__items = [NSArray arrayWithContentsOfFile:filePath];
+	}
+	
+	return __items;
 }
 
 + (void)setupMenu
@@ -46,36 +56,42 @@
 		{
 			NSMenuItem * menuItem = [[NSMenuItem alloc] init];
             menuItem.target = [XAlignPlugin sharedInstance];
-            menuItem.title  = item[kPatternTitle];
+            menuItem.title  = item[kMenuTitle];
 			menuItem.representedObject = item;
-			menuItem.action = @selector(align:);
 			
-            NSString * skey  = item[kPatternShortcut][kPatternShortcutKey];
-            NSString * sMask = item[kPatternShortcut][kPatternShortcutMask];
+            NSString * skey  = item[kMenuShortcut][kMenuShortcutKey];
+            NSString * sMask = item[kMenuShortcut][kMenuShortcutMask];
 			
 			if ( skey && sMask )
 			{
 				[menuItem setKeyEquivalent:skey];
 				
 				NSUInteger keyMask = 0;
-				if ( NSNotFound != [sMask rangeOfString:kPatternShortcutMaskCmd].location )
+				if ( NSNotFound != [sMask rangeOfString:kMenuShortcutMaskCmd].location )
 					keyMask |= NSCommandKeyMask;
-				if ( NSNotFound != [sMask rangeOfString:kPatternShortcutMaskCtrl].location )
+				if ( NSNotFound != [sMask rangeOfString:kMenuShortcutMaskCtrl].location )
 					keyMask |= NSControlKeyMask;
-				if ( NSNotFound != [sMask rangeOfString:kPatternShortcutMaskShift].location )
+				if ( NSNotFound != [sMask rangeOfString:kMenuShortcutMaskShift].location )
 					keyMask |= NSShiftKeyMask;
 				[menuItem setKeyEquivalentModifierMask:NSShiftKeyMask|NSCommandKeyMask];
 			}
+
+            NSString * selector = item[kMenuSelector];
+            
+            if ( selector )
+            {
+				SEL action = NSSelectorFromString(selector);
+				menuItem.action = action;
+            }
 			
 			[alignMenu addItem:menuItem];
 		}
-        // help menu item
-        NSMenuItem * helpMenuItem = [[NSMenuItem alloc] init];
-		helpMenuItem.title  = @"Help";
-		helpMenuItem.action = @selector(showHelp);
-        helpMenuItem.target = [XAlignPlugin sharedInstance];
-        [alignMenu addItem:helpMenuItem];
     }
+}
+
++ (void)setupPatternManger
+{
+	[XAlignPatternManager setupWithRawArray:[XAlignPluginConfig items]];
 }
 
 @end
