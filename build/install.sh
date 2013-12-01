@@ -29,5 +29,5 @@
   echo
   echo "More info: https://github.com/qfish/XAlign/"
   echo
-  echo "To uninstall XAlign, \`curl github.so/build/uninstall.sh | sh\`"
+  echo "To uninstall XAlign, \`curl github.so/XAlign/build/uninstall.sh | sh\`"
   echo "."
