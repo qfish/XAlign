@@ -1,0 +1,1 @@
+tar -zcvf XAlign.tar.gz ./XAlign.xcplugin
