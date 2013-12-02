@@ -15,9 +15,23 @@ a useful Xcode plugin to align regular code. it can align xnything as u want.
 ![Equal](http://github.so/XAlign/images/property.gif)
 
 ## Install
+
+1. Terminally
+
 ```
 $ curl github.so/XAlign/build/install.sh | sh
 ```
+
+2. Manually
+
+  1. Download this package [XAlign.tar.gz](http://github.so/XAlign/build/XAlign.tar.gz)
+  2. then unpackage it, copy or move the `XAlign.xcplugin` to follow path:
+    ```
+    ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/
+    ```
+    tips: Quick go in finder `cmd+shift+g`; if there's no dir `Plug-ins`, you should make one.
+
+  3. then restart your Xcode.
 
 ## Uninstall
 ```
