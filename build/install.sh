@@ -16,8 +16,8 @@
 
 # Download the package and unpack it.
 
-  curl -o "$PACKAGE" github.so/XAlign/build/"$PACKAGE"
-  # sudo wget github.so/XAlign/build/"$PACKAGE" -O "$PACKAGE"
+  # curl -o "$PACKAGE" github.so/XAlign/build/"$PACKAGE"
+  sudo wget github.so/XAlign/build/"$PACKAGE" -O "$PACKAGE"
   tar xzf "$PACKAGE" -C "$PLUGIN_DIR"
 
 # remove tmp files
