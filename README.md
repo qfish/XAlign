@@ -1,9 +1,11 @@
 XAlign
 ======
 
-a useful Xcode plugin to align regular code. it can align xnything as u want.
+a useful Xcode plugin to align regular code. it can align xnything with any format as u want.
 
 ## What's XAlign
+
+there are some example format patterns below, of course, you can make your own. the example pattern file is under the `main` dir. Just try it yourself.
 
 ### 1. Align By Fisrt =
 ![Equal](http://github.so/XAlign/images/equal.gif)
