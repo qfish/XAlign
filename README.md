@@ -21,7 +21,6 @@ a useful Xcode plugin to align regular code. it can align xnything as u want.
 ```
 $ curl github.so/XAlign/build/install.sh | sh
 ```
-
 2. Manually
 
   1. Download this package [XAlign.tar.gz](http://github.so/XAlign/build/XAlign.tar.gz)
