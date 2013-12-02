@@ -40,7 +40,7 @@ $ curl github.so/XAlign/build/uninstall.sh | sh
 ```
 
 ## Usage
-### re in ur Xcode
+### Where in ur Xcode
 ```sh
 Xcode -> Edit -> XAlign 
 ```
