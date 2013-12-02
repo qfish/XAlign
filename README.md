@@ -50,6 +50,11 @@ Xcode -> Edit -> XAlign
 shfit + cmd + x
 ```
 
+### Trouble-Shooting
+  
+  * [快捷键修改](https://github.com/qfish/XAlign/wiki/Trouble-Shooting#shortcut-conflicts)
+   
+  
 ## Not the end
 
 I want to write more, but i am sleepy zzzzz. :)
