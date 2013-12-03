@@ -11,7 +11,7 @@
 #import "NSString+XAlign.h"
 #import "XAlignPluginConfig.h"
 
-#ifdef __DEBUG__
+#ifdef	XDEBUG
 #define XAlignLog( s ) NSLog( @"[XAlign]:%@", (s) );
 #else
 #define XAlignLog( s )

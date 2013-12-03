@@ -44,7 +44,7 @@ DEF_SINGLETON( XAlignPluginConfig );
 
 + (void)setKeyShortcut:(NSDictionary *)keyShortcut
 {
-	NSLog( @"\n=====\n%@\n========\n", keyShortcut );
+//	NSLog( @"\n=====\n%@\n========\n", keyShortcut );
 
 	[self setShortcut:keyShortcut menuItem:[XAlignPluginConfig sharedInstance].keyMenuItem];
 	[[NSUserDefaults standardUserDefaults] setObject:keyShortcut forKey:kXAlignShortcut];
@@ -55,7 +55,7 @@ DEF_SINGLETON( XAlignPluginConfig );
 {
 	NSDictionary * shortcut = [[NSUserDefaults standardUserDefaults] dictionaryForKey:kXAlignShortcut];
 
-	NSLog( @"\n=====\n%@\n========\n", shortcut );
+//	NSLog( @"\n=====\n%@\n========\n", shortcut );
 	
 	if ( nil == shortcut )
 	{
