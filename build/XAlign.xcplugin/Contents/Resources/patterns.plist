@@ -3,19 +3,6 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>title</key>
-		<string>Auto Align</string>
-		<key>selector</key>
-		<string>autoAlign</string>
-		<key>shortcut</key>
-		<dict>
-			<key>key</key>
-			<string>x</string>
-			<key>mask</key>
-			<string>cmd+shfit</string>
-		</dict>
-	</dict>
-	<dict>
 		<key>id</key>
 		<string>0</string>
 		<key>title</key>
@@ -230,12 +217,6 @@
 				</dict>
 			</dict>
 		</array>
-	</dict>
-	<dict>
-		<key>title</key>
-		<string>Help</string>
-		<key>selector</key>
-		<string>showHelp</string>
 	</dict>
 </array>
 </plist>
