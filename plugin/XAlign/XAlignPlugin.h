@@ -6,7 +6,10 @@
 //  Copyright (c) 2013 net.qfish. All rights reserved.
 //
 
+#import "blade.h"
 #import <Foundation/Foundation.h>
+
+#import "SettingWindowController.h"
 
 @interface XAlignPlugin : NSObject
 
@@ -14,8 +17,9 @@ AS_SINGLETON( XAlignPlugin );
 
 @property (nonatomic, assign) NSBundle * bundle;
 @property (nonatomic, strong) NSWindowController * helpWindow;
+@property (nonatomic, strong) SettingWindowController * settingWindow;
 
-- (void)showHelp;
+- (IBAction)showSetting:(id)sender;
 - (void)autoAlign;
 - (void)align:(NSMenuItem *)sender;
 

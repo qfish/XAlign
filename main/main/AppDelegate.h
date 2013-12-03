@@ -17,5 +17,6 @@
 
 - (IBAction)format:(id)sender;
 - (IBAction)selectFormatter:(id)sender;
+- (IBAction)showSetting:(id)sender;
 
 @end

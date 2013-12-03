@@ -139,9 +139,14 @@ DEF_SINGLETON( XAlignPlugin );
     }
 }
 
-- (void)showHelp
+- (void)showSetting:(id)sender
 {
-	// TODO:
+	if ( nil == self.settingWindow )
+	{
+		self.settingWindow = [[SettingWindowController alloc] initWithWindowNibName:@"SettingWindowController"];
+	}
+	
+	[self.settingWindow showWindow:self.settingWindow];
 }
 
 @end

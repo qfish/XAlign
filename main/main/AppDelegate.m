@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "NSString+XAlign.h"
+#import "SettingWindowController.h"
 #import <CoreText/CoreText.h>
 
 @implementation AppDelegate
@@ -24,7 +25,16 @@
 	NSString * replace = [[self testFile:@"2.txt"] stringByAligningWithPatterns:pgs[1]];
 
     NSLog( @"\n%@", replace );
+}
+
+- (void)showSetting:(id)sender
+{
+	if ( nil == self.settingWindow )
+	{
+		self.settingWindow = [[SettingWindowController alloc] initWithWindowNibName:@"SettingWindowController"];
+	}
 	
+	[self.settingWindow showWindow:self.settingWindow];
 }
 
 - (IBAction)format:(id)sender

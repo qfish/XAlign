@@ -1365,7 +1365,7 @@
                             <font key="font" metaFont="system"/>
                         </buttonCell>
                         <connections>
-                            <action selector="format:" target="494" id="9xI-Fe-gb2"/>
+                            <action selector="showSetting:" target="494" id="a9U-O9-UTW"/>
                         </connections>
                     </button>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpU-Fd-yjH">
