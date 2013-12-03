@@ -227,7 +227,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "PACKAGE_NAME=$PRODUCT_NAME.tar.gz\nPLUGIN_DIR=\"$HOME/Library/Application Support/Developer/Shared/Xcode/Plug-ins\"\ntar zcvf $SRCROOT/../../$PACKAGE_NAME \"$PLUGIN_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"";
+			shellScript = "X_PACKAGE_NAME=$PRODUCT_NAME.tar.gz\nX_PLUGIN_DIR=\"$HOME/Library/Application Support/Developer/Shared/Xcode/Plug-ins\"\nX_TARGET_BUILD=\"$X_PLUGIN_DIR/$PRODUCT_NAME.$WRAPPER_EXTENSION\"\ncp -r \"$X_TARGET_BUILD\" ./../../\ncd ./../../\ntar zcvf $X_PACKAGE_NAME \"$PRODUCT_NAME.$WRAPPER_EXTENSION\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
