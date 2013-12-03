@@ -52,6 +52,7 @@
     self = [super init];
     if (self) {
 		self.position = XAlignPositionLast;
+		self.isNecessary = YES;
     }
     return self;
 }

@@ -211,11 +211,20 @@
 	
 	NSString * match = nil;
 	NSArray * components = [self componentsSeparatedByRegexPattern:pattern.string position:pattern.position match:&match];
-	
+
 	if ( !match )
 	{
-		*line = nil;
-		return;
+		if ( pattern.isNecessary )
+		{
+			*line = nil;
+			return;
+		}
+		else
+		{
+			components = @[ self, @"" ];
+			match = @"";
+			return;
+		}
 	}
 	
 	if ( nil == *line )

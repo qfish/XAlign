@@ -1,20 +1,4 @@
-//
-//  XAlignPattern.m
-//  main
-//
-//  Created by QFish on 11/30/13.
-//  Copyright (c) 2013 net.qfish. All rights reserved.
-//
-
-#define kPatterns                @"patterns"
-#define kPatternID                    @"id"
-#define kPatternHeadMode              @"headMode"
-#define kPatternTailMode              @"tailMode"
-#define kPatternMatchMode             @"matchMode"
-#define kPatternString                @"string"
-#define kPatternControl               @"control"
-#define kPatternControlString         @"string"
-#define kPatternControlNeedTrim       @"needTrim"
-#define kPatternControlNeedPadding    @"needPadding"
-#define kPatternControlPaddingString  @"paddingString"
-#define kPatternControlIsMatchPadding @"isMatchPadding"
+#define message_reply_me             L(@"message_reply_me")                  //回复我的";
+#define message_at_me             L(@"message_at_me")//@我的";
+#define message_at_me_topic             L(@"message_at_me_topic")                //主帖";
+#define message_at_me_reply             L(@"message_at_me_reply")                     //回复";

@@ -89,6 +89,17 @@
 					<string> </string>
 				</dict>
 			</dict>
+			<dict>
+				<key>string</key>
+				<string>\\s+(?=[//|/\\*])</string>
+				<key>isNecessary</key>
+				<false/>
+				<key>control</key>
+				<dict>
+					<key>string</key>
+					<string> </string>
+				</dict>
+			</dict>
 		</array>
 	</dict>
 	<dict>
