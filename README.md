@@ -16,18 +16,25 @@ there are some example format patterns below, of course, you can make your own. 
 ### 3. Align By Property Group
 ![Equal](http://github.so/XAlign/images/property.gif)
 
-## Install
+## Install & Update
 
 1. Terminally
 
-```
-$ curl github.so/XAlign/build/install.sh | sh
-```
+   ```sh
+    # install
+    $ curl github.so/XAlign/build/install.sh | sh
+
+    or
+
+    # update
+    $ curl github.so/XAlign/build/install.sh | sh
+   ```
+   
 2. Manually
 
   1. Download this package [XAlign.tar.gz](http://github.so/XAlign/build/XAlign.tar.gz)
   2. then unpackage it, copy or move the `XAlign.xcplugin` to follow path:
-    ```
+    ```sh
     ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/
     ```
     tips: Quick go in finder `cmd+shift+g`; if there's no dir `Plug-ins`, you should make one.
@@ -35,7 +42,7 @@ $ curl github.so/XAlign/build/install.sh | sh
   3. then restart your Xcode.
 
 ## Uninstall
-```
+```sh
 $ curl github.so/XAlign/build/uninstall.sh | sh
 ```
 
@@ -45,10 +52,12 @@ $ curl github.so/XAlign/build/uninstall.sh | sh
 Xcode -> Edit -> XAlign 
 ```
 
-### Auto Align Shortcut
+### Auto Align Shortcut (default)
 ```sh
 shfit + cmd + x
 ```
+You can setting in the setting panel, `Xcode -> Edit -> XAlign -> Setting`.
+
 
 ### Trouble-Shooting
   
