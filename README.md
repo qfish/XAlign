@@ -1,24 +1,24 @@
 XAlign
 ======
 
-a useful Xcode plugin to align regular code. it can align xnything with any format as u want.
+A useful Xcode plugin to align regular code. It can align anything by using custom alignment patterns.
 
 ## What's XAlign
 
-there are some example format patterns below, of course, you can make your own. the example pattern file is under the `main` dir. Just try it yourself.
+Here are some example alignment patterns. Of course you can make your own. The example files are under the `main` dir. Just try it yourself.
 
-### 1. Align By Fisrt =
+### Align by equals sign
 ![Equal](http://github.so/XAlign/images/equal.gif)
 
-### 2. Align By Define Group
-![Equal](http://github.so/XAlign/images/define.gif)
+### Align by define group
+![Define](http://github.so/XAlign/images/define.gif)
 
-### 3. Align By Property Group
-![Equal](http://github.so/XAlign/images/property.gif)
+### Align by property group
+![Property](http://github.so/XAlign/images/property.gif)
 
 ## Install & Update
 
-1. Terminally
+### Via command-line
 
    ```sh
     # install
@@ -30,33 +30,33 @@ there are some example format patterns below, of course, you can make your own. 
     $ curl github.so/XAlign/build/update.sh | sh
    ```
 
-2. Manually
+### Manually
 
-  1. Download this package [XAlign.tar.gz](http://github.so/XAlign/build/XAlign.tar.gz)
-  2. then unpackage it, copy or move the `XAlign.xcplugin` to follow path:
-    ```sh
+1. Download this package [XAlign.tar.gz](http://github.so/XAlign/build/XAlign.tar.gz)
+2. Unpack it, copy or move the `XAlign.xcplugin` to the following path:
+    ```
     ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/
     ```
-    tips: Quick go in finder `cmd+shift+g`; if there's no dir `Plug-ins`, you should make one.
+    Tips: To quickly go to Finder type `Shift + Cmd + G`. If there is no `Plug-ins` directory, you should make one.
 
-  3. then restart your Xcode.
+3. Restart Xcode.
 
 ## Uninstall
-```sh
+```
 $ curl github.so/XAlign/build/uninstall.sh | sh
 ```
 
 ## Usage
-### Where in ur Xcode
-```sh
+### In Xcode
+```
 Xcode -> Edit -> XAlign 
 ```
 
 ### Auto Align Shortcut (default)
-```sh
-shfit + cmd + x
 ```
-You can setting in the setting panel, `Xcode -> Edit -> XAlign -> Setting`.
+Shift + Cmd + X
+```
+You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> Setting`.
 
 
 ### Trouble-Shooting
@@ -70,7 +70,7 @@ You can setting in the setting panel, `Xcode -> Edit -> XAlign -> Setting`.
 
 TODO:
 
-- [x] how to customize ur align pattern
-- [x] my xcode plugin template
+- [x] How to customize your alignment patterns
+- [x] My Xcode plugin template
 - [x] etc.
 
