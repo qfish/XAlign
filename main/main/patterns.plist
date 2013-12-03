@@ -145,30 +145,73 @@
 			</dict>
 			<dict>
 				<key>string</key>
-				<string>(?&lt;=\w)\s*</string>
-				<key>tailMode</key>
-				<integer>2</integer>
+				<string>\s+\*</string>
+				<key>isOptional</key>
+				<true/>
 				<key>control</key>
 				<dict>
 					<key>string</key>
-					<string> </string>
+					<string> * </string>
 				</dict>
 			</dict>
 			<dict>
 				<key>string</key>
-				<string>[\s\*]*\w+</string>
+				<string>(?&lt;!\*)\s*\w+;</string>
+				<key>isOptional</key>
+				<true/>
+				<key>control</key>
+				<dict>
+					<key>format</key>
+					<string>   %@</string>
+					<key>needTrim</key>
+					<true/>
+					<key>needFormat</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>(?&lt;=\*)\s*\w+;</string>
+				<key>isOptional</key>
+				<true/>
 				<key>control</key>
 				<dict>
 					<key>format</key>
 					<string>%@</string>
-					<key>notFoundFormat</key>
-					<string>  %@</string>
 					<key>needTrim</key>
 					<true/>
-					<key>needFormatWhenFound</key>
+					<key>needFormat</key>
 					<true/>
-					<key>foundString</key>
-					<string>*</string>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\s*//.*$</string>
+				<key>isOptional</key>
+				<true/>
+				<key>control</key>
+				<dict>
+					<key>format</key>
+					<string> %@</string>
+					<key>needFormat</key>
+					<true/>
+					<key>needTrim</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\s*/\*.*$</string>
+				<key>isOptional</key>
+				<true/>
+				<key>control</key>
+				<dict>
+					<key>format</key>
+					<string> %@</string>
+					<key>needFormat</key>
+					<true/>
+					<key>needTrim</key>
+					<true/>
 				</dict>
 			</dict>
 		</array>

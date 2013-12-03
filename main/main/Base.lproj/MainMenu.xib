@@ -1364,9 +1364,6 @@
                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                             <font key="font" metaFont="system"/>
                         </buttonCell>
-                        <connections>
-                            <action selector="showSetting:" target="494" id="a9U-O9-UTW"/>
-                        </connections>
                     </button>
                     <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rpU-Fd-yjH">
                         <rect key="frame" x="6" y="161" width="346" height="25"/>

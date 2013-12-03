@@ -1,4 +1,9 @@
 	@property (nonatomic, retain) UITextField * textView;
 @property (nonatomic, retain) UIButton editButton;
-@property (nonatomic, assign) int editButton;
+@property (nonatomic, assign) int editButton; ///asdasdas
 @property (nonatomic, copy) UIButton    * editButton;
+@property (strong, nonatomic) NSString *gender;
+@property (strong, nonatomic) NSString *  headURL; /*sad*/
+@property (strong, nonatomic) NSString *   dtype; //1qq 2新浪 3游客
+@property (strong, nonatoasdmic) NSString *    followNums;
+@property (strong, nonatomic) NSString       *fanNums;

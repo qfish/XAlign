@@ -12,7 +12,7 @@
 		<key>shortcut</key>
 		<dict>
 			<key>key</key>
-			<string>a</string>
+			<string>x</string>
 			<key>mask</key>
 			<string>cmd+shfit</string>
 		</dict>

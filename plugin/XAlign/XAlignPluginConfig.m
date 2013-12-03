@@ -135,10 +135,7 @@ DEF_SINGLETON( XAlignPluginConfig );
             NSString * selector = item[kMenuSelector];
             
             if ( selector )
-            {
-				SEL action = NSSelectorFromString(selector);
-				menuItem.action = action;
-            }
+				menuItem.action = NSSelectorFromString(selector);;
 			
 			[alignMenu addItem:menuItem];
 		}
