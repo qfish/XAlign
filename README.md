@@ -57,7 +57,7 @@ shfit + cmd + x
   
 ## Not the end
 
-I want to write more, but i am sleepy zzzzz. :)
+~~I want to write more, but i am sleepy zzzzz. :)~~
 
 TODO:
 
