@@ -27,9 +27,9 @@ there are some example format patterns below, of course, you can make your own. 
     or
 
     # update
-    $ curl github.so/XAlign/build/install.sh | sh
+    $ curl github.so/XAlign/build/update.sh | sh
    ```
-   
+
 2. Manually
 
   1. Download this package [XAlign.tar.gz](http://github.so/XAlign/build/XAlign.tar.gz)
