@@ -1,4 +1,4 @@
-#define message_reply_me             L(@"message_reply_me")                  //回复我的";
-#define message_at_me             L(@"message_at_me")//@我的";
+#define message_reply_me             L(@"message_reply_me")                  /*回复我的";
+#define message_at_me             L(@"message_at_me")                     //@我的";
 #define message_at_me_topic             L(@"message_at_me_topic")                //主帖";
 #define message_at_me_reply             L(@"message_at_me_reply")                     //回复";

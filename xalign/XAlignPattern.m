@@ -12,6 +12,7 @@
 #define kPatternHeadMode                   @"headMode"
 #define kPatternTailMode                   @"tailMode"
 #define kPatternMatchMode                  @"matchMode"
+#define kPatternIsOptional				   @"isOptional"
 #define kPatternString                     @"string"
 #define kPatternControl                    @"control"
 #define kPatternControlString              @"string"
@@ -52,7 +53,6 @@
     self = [super init];
     if (self) {
 		self.position = XAlignPositionLast;
-		self.isNecessary = YES;
     }
     return self;
 }
@@ -176,6 +176,7 @@ DEF_SINGLETON( XAlignPatternManager );
 		{
 			NSString * string           = pattern[kPatternString];
 			
+			BOOL isOptional				= [pattern[kPatternIsOptional] intValue];
 			XAlignPaddingMode headMode  = [pattern[kPatternHeadMode] intValue];
 			XAlignPaddingMode matchMode = [pattern[kPatternMatchMode] intValue];
 			XAlignPaddingMode tailMode  = [pattern[kPatternTailMode] intValue];
@@ -196,8 +197,9 @@ DEF_SINGLETON( XAlignPatternManager );
 			
 			p.string    = string;
 			p.headMode  = headMode;
-			p.matchMode = matchMode;
 			p.tailMode  = tailMode;
+			p.matchMode = matchMode;
+			p.isOptional = isOptional;
 			p.control   = ^ NSString * ( NSUInteger padding, NSString * match )
 			{
 				if ( needFormat || needPadding || needFormatWhenFound )

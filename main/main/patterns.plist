@@ -71,18 +71,20 @@
 		<array>
 			<dict>
 				<key>string</key>
-				<string>^\s*#define\s+</string>
+				<string>^\s*</string>
 				<key>tailMode</key>
 				<integer>2</integer>
 				<key>control</key>
 				<dict>
 					<key>string</key>
-					<string>#define </string>
+					<string></string>
 				</dict>
 			</dict>
 			<dict>
 				<key>string</key>
-				<string>(?&lt;!#define\*)\s+(?![\*/])</string>
+				<string>\s+</string>
+				<key>tailMode</key>
+				<integer>2</integer>
 				<key>control</key>
 				<dict>
 					<key>string</key>
@@ -91,13 +93,32 @@
 			</dict>
 			<dict>
 				<key>string</key>
-				<string>\\s+(?=[//|/\\*])</string>
-				<key>isNecessary</key>
-				<false/>
+				<string>\s*//.*$</string>
+				<key>isOptional</key>
+				<true/>
 				<key>control</key>
 				<dict>
-					<key>string</key>
-					<string> </string>
+					<key>format</key>
+					<string> %@</string>
+					<key>needFormat</key>
+					<true/>
+					<key>needTrim</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\s*/\*.*$</string>
+				<key>isOptional</key>
+				<true/>
+				<key>control</key>
+				<dict>
+					<key>format</key>
+					<string> %@</string>
+					<key>needFormat</key>
+					<true/>
+					<key>needTrim</key>
+					<true/>
 				</dict>
 			</dict>
 		</array>

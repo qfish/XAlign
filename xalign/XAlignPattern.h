@@ -28,7 +28,7 @@ typedef NSString * (^XAlignPatternControlBlockUS)(NSUInteger padding, NSString *
 @end
 
 @interface XAlignPattern : NSObject
-@property (nonatomic, assign) BOOL isNecessary;
+@property (nonatomic, assign) BOOL isOptional;
 @property (nonatomic, retain) NSString * string;
 @property (nonatomic, assign) NSUInteger position;
 @property (nonatomic, assign) XAlignPaddingMode headMode;

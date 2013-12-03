@@ -17,6 +17,7 @@
 
 @interface NSString (XAlign)
 - (NSString *)xtrim;
+- (NSString *)xtrimTail;
 - (NSUInteger)xlength;
 - (NSString *)stringByAligningWithPatterns:(NSArray *)patterns;
 - (NSString *)stringByAligningWithPatterns:(NSArray *)patterns partialCount:(NSUInteger)count;

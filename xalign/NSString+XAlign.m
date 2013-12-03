@@ -63,45 +63,52 @@
 		NSUInteger padding = [paddings[i] integerValue];
 		NSString * tempString = nil;
 		
-		/*
-			i: 0 1 2 3 4 5 6 7 8 9 10
-			   ----- --- --- --- ----
-			p:   0    1   2   3   4
-		 */
-		
-		NSUInteger pIndex = i == 0 ? 0 : ( ( i + 1 ) / 2 - 1 );
-		
-		XAlignPattern * pattern = patterns[pIndex];
-		
-		// build string
-		
-		if ( 0 == i )
+		if ( partial.length )
 		{
-			if ( XAlignPaddingModeNone == pattern.headMode )
-				tempString = partial;
+			/*
+			 i: 0 1 2 3 4 5 6 7 8 9 10
+			 ----- --- --- --- ----
+			 p:   0    1   2   3   4
+			 */
+			
+			NSUInteger pIndex = i == 0 ? 0 : ( ( i + 1 ) / 2 - 1 );
+			
+			XAlignPattern * pattern = patterns[pIndex];
+			
+			// build string
+			
+			if ( 0 == i )
+			{
+				if ( XAlignPaddingModeNone == pattern.headMode )
+					tempString = partial;
+				else
+					tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
+			}
 			else
-				tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
+			{
+				switch ( i % 2 )
+				{
+					case 0: // tail
+						if ( XAlignPaddingModeNone == pattern.tailMode )
+							tempString = partial;
+						else
+							tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
+						break;
+					case 1: // match
+						tempString = pattern.control(padding, partial);
+						break;
+				}
+			}
 		}
 		else
 		{
-			switch ( i % 2 )
-			{
-				case 0: // tail
-					if ( XAlignPaddingModeNone == pattern.tailMode )
-						tempString = partial;
-					else
-						tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
-					break;
-				case 1: // match
-					tempString = pattern.control(padding, partial);
-					break;
-			}
+			tempString = @"";
 		}
 		
 		[string appendString:tempString];
 	}
 	
-	return string;
+	return string.xtrimTail;
 }
 
 - (NSString *)description
@@ -117,6 +124,22 @@
 - (NSString *)xtrim
 {
 	return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
+}
+
+- (NSString *)xtrimTail
+{
+	NSError * error = nil;
+	NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\s+$" options:NSRegularExpressionCaseInsensitive error:&error];
+	
+	if ( error )
+		return self;
+	
+	NSArray * matches = [regex matchesInString:self options:NSMatchingReportProgress range:NSMakeRange(0, self.length)];
+	
+	if ( 0 == matches.count )
+		return self;
+	
+	return [self substringWithRange:NSMakeRange(0, [matches[0] range].location)];
 }
 
 - (NSUInteger)xlength
@@ -164,13 +187,15 @@
 	
 	for ( NSString * line in lines )
     {
+		NSString * trimLine = line.xtrimTail;
+		
 		XAlignLine * xline = nil;
 
-		[line processLine:&xline level:(int)(patterns.count - 1) patterns:patterns paddings:paddings];
+		[trimLine processLine:&xline level:(int)(patterns.count - 1) patterns:patterns paddings:paddings];
 		
 		if ( !xline )
 		{
-			[processLines addObject:line];
+			[processLines addObject:trimLine];
 		}
 		else
 		{
@@ -214,7 +239,7 @@
 
 	if ( !match )
 	{
-		if ( pattern.isNecessary )
+		if ( !pattern.isOptional )
 		{
 			*line = nil;
 			return;
@@ -223,7 +248,6 @@
 		{
 			components = @[ self, @"" ];
 			match = @"";
-			return;
 		}
 	}
 	

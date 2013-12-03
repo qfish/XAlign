@@ -14,16 +14,16 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-//	[self test1];
-	[self test2];
+	[self test1];
+//	[self test2];
 //	[self test3];
 //	[self test4];
 //	[self test5];
 	
-//	NSArray * pgs = [XAlignPatternManager patternGroupsWithContentsOfFile:@"patterns"];
-//	NSString * replace = [[self testFile:@"1.txt"] stringByAligningWithPatterns:pgs[0]];
-//
-//    NSLog( @"\n%@", replace );
+	NSArray * pgs = [XAlignPatternManager patternGroupsWithContentsOfFile:@"patterns"];
+	NSString * replace = [[self testFile:@"2.txt"] stringByAligningWithPatterns:pgs[1]];
+
+    NSLog( @"\n%@", replace );
 	
 }
 
@@ -90,13 +90,21 @@
 	};
 	
 	XAlignPattern * p3 = [[XAlignPattern alloc] init];
-	p3.isNecessary = NO;
+	p3.isOptional = YES;
 	p3.string = @"\\s*//.*$";
 	p3.control = ^ NSString * ( NSUInteger padding, NSString * match ) {
-		return [NSString stringWithFormat:@" %@", match.xtrim];
+		NSLog( @"%d =%@=", padding, match);
+		return [NSString stringWithFormat:@"+++|%@", match.xtrim];
 	};
 	
-	NSArray * patterns = @[p1, p2, p3];
+	XAlignPattern * p4 = [[XAlignPattern alloc] init];
+	p4.isOptional = YES;
+	p4.string = @"\\s*/\\*.*$";
+	p4.control = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return [NSString stringWithFormat:@"+++|%@", match.xtrim];
+	};
+	
+	NSArray * patterns = @[p1, p2, p3, p4];
 	
 	NSString * replace = [[self testFile:@"2.txt"] stringByAligningWithPatterns:patterns];
 	
