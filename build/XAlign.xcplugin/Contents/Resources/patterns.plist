@@ -33,6 +33,8 @@
 			<dict>
 				<key>string</key>
 				<string>\s*(?&lt;=[\w\s])[\|\+\-\*]?=(?=[\w\s])\s*</string>
+				<key>position</key>
+				<integer>-1</integer>
 				<key>control</key>
 				<dict>
 					<key>needTrim</key>
@@ -40,6 +42,36 @@
 					<key>format</key>
 					<string> %@ </string>
 					<key>needFormat</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\s*//.*$</string>
+				<key>isOptional</key>
+				<true/>
+				<key>control</key>
+				<dict>
+					<key>format</key>
+					<string> %@</string>
+					<key>needFormat</key>
+					<true/>
+					<key>needTrim</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\s*/\*.*$</string>
+				<key>isOptional</key>
+				<true/>
+				<key>control</key>
+				<dict>
+					<key>format</key>
+					<string> %@</string>
+					<key>needFormat</key>
+					<true/>
+					<key>needTrim</key>
 					<true/>
 				</dict>
 			</dict>
