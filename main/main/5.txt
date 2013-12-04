@@ -1,6 +1,5 @@
-AS_MODEL( ActivityInfoModel, model1 );
-AS_MODEL( FeedListModel, model2 );
-
-AS_OUTLET( BeeUIScrollView, list );
-AS_OUTLET( BeeUIButton, mask );
-AS_OUTLET( TopMenu_iPhone, menu );
+@"profile_image_url":self.userInfo.headURL,
+@"gender":self.userInfo.gender,
+@"objectid":self.userInfo.userId,
+@"nick":self.userInfo.nick,
+@"description":self.userInfo.signature

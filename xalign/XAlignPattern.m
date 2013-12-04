@@ -9,6 +9,7 @@
 #define kPatterns                          @"patterns"
 #define kPatternID                         @"id"
 #define kPatternType                       @"type"
+#define kPatternPosition				   @"position"
 #define kPatternHeadMode                   @"headMode"
 #define kPatternTailMode                   @"tailMode"
 #define kPatternMatchMode                  @"matchMode"
@@ -47,15 +48,6 @@
 #pragma mark -
 
 @implementation XAlignPattern
-
-- (id)init
-{
-    self = [super init];
-    if (self) {
-		self.position = XAlignPositionLast;
-    }
-    return self;
-}
 
 - (NSString *)description
 {
@@ -135,18 +127,18 @@ DEF_SINGLETON( XAlignPatternManager );
 + (NSArray *)patternGroupsWithContentsOfFile:(NSString *)name
 {
 	NSString * filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
-	NSArray * rawArray = [NSArray arrayWithContentsOfFile:filePath];
+	NSArray * rawArray = [[NSArray alloc]initWithContentsOfFile:filePath];
     return [self patternGroupsWithRawArray:rawArray];
 }
 
-+ (NSArray *)patternGroupsWithRawArray:(NSArray *)array
++ (NSArray *)patternGroupsWithRawArray:(NSArray *)rawArray
 {
-	if ( !array )
+	if ( !rawArray )
 		return nil;
 	
 	NSMutableArray * patternGroups = [NSMutableArray array];
 	
-	for ( NSDictionary * dict in array )
+	for ( NSDictionary * dict in rawArray )
 	{
 		NSArray * patternGroup = [self patternGroupWithDictinary:dict];
 		
@@ -176,22 +168,23 @@ DEF_SINGLETON( XAlignPatternManager );
 		{
 			NSString * string           = pattern[kPatternString];
 			
-			BOOL isOptional				= [pattern[kPatternIsOptional] intValue];
-			XAlignPaddingMode headMode  = [pattern[kPatternHeadMode] intValue];
-			XAlignPaddingMode matchMode = [pattern[kPatternMatchMode] intValue];
-			XAlignPaddingMode tailMode  = [pattern[kPatternTailMode] intValue];
-			
-            NSDictionary * control    = pattern[kPatternControl];
-            BOOL needTrim             = [control[kPatternControlNeedTrim] boolValue];
-            BOOL needFormat           = [control[kPatternControlNeedFormat] boolValue];
-            BOOL needFormatWhenFound  = [control[kPatternControlNeedFormatWhenFound] boolValue];
-            BOOL needPadding          = [control[kPatternControlNeedPadding] boolValue];
-            BOOL isMatchPadding       = [control[kPatternControlIsMatchPadding] boolValue];
-            NSString * controlString  = control[kPatternControlString];
-            NSString * paddingString  = control[kPatternControlPaddingString];
-            NSString * foundString    = control[kPatternControlFoundString];
-            NSString * format		  = control[kPatternControlFormat];
-            NSString * notFoundFormat = control[kPatternControlNotFoundFormat];
+            BOOL isOptional             = [pattern[kPatternIsOptional] intValue];
+            XAlignPosition position     = [pattern[kPatternPosition] intValue];
+            XAlignPaddingMode headMode  = [pattern[kPatternHeadMode] intValue];
+            XAlignPaddingMode matchMode = [pattern[kPatternMatchMode] intValue];
+            XAlignPaddingMode tailMode  = [pattern[kPatternTailMode] intValue];
+
+            NSDictionary * control      = pattern[kPatternControl];
+            BOOL needTrim               = [control[kPatternControlNeedTrim] boolValue];
+            BOOL needFormat             = [control[kPatternControlNeedFormat] boolValue];
+            BOOL needFormatWhenFound    = [control[kPatternControlNeedFormatWhenFound] boolValue];
+            BOOL needPadding            = [control[kPatternControlNeedPadding] boolValue];
+            BOOL isMatchPadding         = [control[kPatternControlIsMatchPadding] boolValue];
+            NSString * controlString    = control[kPatternControlString];
+            NSString * paddingString    = control[kPatternControlPaddingString];
+            NSString * foundString      = control[kPatternControlFoundString];
+            NSString * format           = control[kPatternControlFormat];
+            NSString * notFoundFormat   = control[kPatternControlNotFoundFormat];
 
 			XAlignPattern * p = [[XAlignPattern alloc] init];
 			
@@ -199,6 +192,7 @@ DEF_SINGLETON( XAlignPatternManager );
 			p.headMode  = headMode;
 			p.tailMode  = tailMode;
 			p.matchMode = matchMode;
+			p.position  = position;
 			p.isOptional = isOptional;
 			p.control   = ^ NSString * ( NSUInteger padding, NSString * match )
 			{

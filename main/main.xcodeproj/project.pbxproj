@@ -20,7 +20,7 @@
 		E9E24B181837D9960040C1B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E24B171837D9960040C1B4 /* AppDelegate.m */; };
 		E9E24B1B1837D9960040C1B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B191837D9960040C1B4 /* MainMenu.xib */; };
 		E9E24B1D1837D9960040C1B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B1C1837D9960040C1B4 /* Images.xcassets */; };
-		E9E24B391837D9CA0040C1B4 /* 1.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B381837D9CA0040C1B4 /* 1.txt */; };
+		E9E24B391837D9CA0040C1B4 /* equalSign.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B381837D9CA0040C1B4 /* equalSign.txt */; };
 		E9EF7F111847A09A00F2C5D5 /* 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9EF7F0F1847A09A00F2C5D5 /* 2.txt */; };
 		E9EF7F121847A09A00F2C5D5 /* 3.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9EF7F101847A09A00F2C5D5 /* 3.txt */; };
 /* End PBXBuildFile section */
@@ -49,7 +49,7 @@
 		E9E24B1A1837D9960040C1B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E9E24B1C1837D9960040C1B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9E24B231837D9960040C1B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E9E24B381837D9CA0040C1B4 /* 1.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 1.txt; sourceTree = "<group>"; };
+		E9E24B381837D9CA0040C1B4 /* equalSign.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = equalSign.txt; sourceTree = "<group>"; };
 		E9EF7F0F1847A09A00F2C5D5 /* 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.txt; sourceTree = "<group>"; };
 		E9EF7F101847A09A00F2C5D5 /* 3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -124,7 +124,7 @@
 				E9E24B161837D9960040C1B4 /* AppDelegate.h */,
 				E9E24B171837D9960040C1B4 /* AppDelegate.m */,
 				E945BCA0184A44AE000E90FA /* patterns.plist */,
-				E9E24B381837D9CA0040C1B4 /* 1.txt */,
+				E9E24B381837D9CA0040C1B4 /* equalSign.txt */,
 				E9EF7F0F1847A09A00F2C5D5 /* 2.txt */,
 				E9EF7F101847A09A00F2C5D5 /* 3.txt */,
 				E9C45A4A18499A7800ACB37B /* 4.txt */,
@@ -200,7 +200,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E24B391837D9CA0040C1B4 /* 1.txt in Resources */,
+				E9E24B391837D9CA0040C1B4 /* equalSign.txt in Resources */,
 				E9E24B0F1837D9960040C1B4 /* InfoPlist.strings in Resources */,
 				E9E24B1D1837D9960040C1B4 /* Images.xcassets in Resources */,
 				E9E24B151837D9960040C1B4 /* Credits.rtf in Resources */,
@@ -336,7 +336,7 @@
 					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
 					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
 				);
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "main/main-Prefix.pch";
 				INFOPLIST_FILE = "main/main-Info.plist";
@@ -357,7 +357,7 @@
 					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/SharedFrameworks",
 					"$(SYSTEM_APPS_DIR)/Xcode.app/Contents/Frameworks",
 				);
-				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "main/main-Prefix.pch";
 				INFOPLIST_FILE = "main/main-Info.plist";

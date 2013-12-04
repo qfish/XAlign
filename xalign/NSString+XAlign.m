@@ -368,6 +368,11 @@ ____STEP_OUT( tail )
 	
 	NSTextCheckingResult * matchResult = nil;
 	
+//	for ( matchResult in matches )
+//	{
+//		NSLog( @"|||%@|||", [self substringWithRange:NSMakeRange(0, NSMaxRange([matchResult range]))]);
+//	}
+		
 	switch ( position )
 	{
 		case XAlignPositionFisrt:

@@ -10,8 +10,8 @@
 #import "blade.h"
 
 typedef enum XAlignPosition{
-    XAlignPositionFisrt = 0,
-    XAlignPositionLast  = NSIntegerMax,
+    XAlignPositionFisrt = -1,
+	XAlignPositionLast,
 } XAlignPosition;
 
 typedef enum XAlignPaddingMode {
@@ -30,7 +30,7 @@ typedef NSString * (^XAlignPatternControlBlockUS)(NSUInteger padding, NSString *
 @interface XAlignPattern : NSObject
 @property (nonatomic, assign) BOOL isOptional;
 @property (nonatomic, retain) NSString * string;
-@property (nonatomic, assign) NSUInteger position;
+@property (nonatomic, assign) XAlignPosition position;
 @property (nonatomic, assign) XAlignPaddingMode headMode;
 @property (nonatomic, assign) XAlignPaddingMode matchMode;
 @property (nonatomic, assign) XAlignPaddingMode tailMode;

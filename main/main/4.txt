@@ -7,3 +7,6 @@
 @property (strong, nonatomic) NSString *   dtype; //1qq 2新浪 3游客
 @property (strong, nonatoasdmic) NSString *    followNums;
 @property (strong, nonatomic) NSString       *fanNums;
+
+@property (strong, nonatomic) UserModel * userInfo;
+@property (weak, nonatomic) IBOutlet UIButton * skipButton;
