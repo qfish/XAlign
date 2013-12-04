@@ -1,7 +1,7 @@
 XAlign
 ======
 
-A useful Xcode plugin to align regular code. It can align anything by using custom alignment patterns.
+An amazing Xcode plugin to align regular code. It can align anything by using custom alignment patterns.
 
 ## What's XAlign
 
