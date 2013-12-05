@@ -5,7 +5,7 @@ An amazing Xcode plugin to align regular code. It can align anything by using cu
 
 ## What's XAlign
 
-Here are some example alignment patterns. Of course you can make your own. The example files are under the `main` dir. Just try it yourself.
+Here are some example alignment patterns. Of course you can make your own. The pattern file is here:  `main/main/patterns.plist`, the patterns are regular expression. Just try it yourself. 
 
 ### Align by equals sign
 ![Equal](http://github.so/XAlign/images/equal.gif)
@@ -59,16 +59,17 @@ Shift + Cmd + X
 You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> Setting`.
 
 
-### Trouble-Shooting
+## Trouble-Shooting
   
-  * [快捷键修改](https://github.com/qfish/XAlign/wiki/Trouble-Shooting#shortcut-conflicts)
+  * [wiki](https://github.com/qfish/XAlign/wiki)
    
+## Want to help
   
-## Not the end
+  * [Star this repository](https://github.com/qfish/XAlign/)
+  * [Bugs Report & Advice](https://github.com/qfish/XAlign/issues)
+  * [Fork & Pull Request](https://github.com/qfish/XAlign/pulls)
 
-~~I want to write more, but i am sleepy zzzzz. :)~~
-
-TODO:
+## TODO:
 
 - [x] How to customize your alignment patterns
 - [x] My Xcode plugin template
