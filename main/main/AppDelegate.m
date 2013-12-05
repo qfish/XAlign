@@ -15,16 +15,18 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 	[self testEqualSign];
-//	[self test2];
-//	[self test3];
-//	[self test4];
-//	[self test5];
+	[self testDefine];
+	[self testProperties];
+	[self testVariables];
+//	[self test];
 	
 	NSArray * pgs = [XAlignPatternManager patternGroupsWithContentsOfFile:@"patterns"];
-	NSString * replace = [[self testFile:@"equalSign.txt"] stringByAligningWithPatterns:pgs[0]];
+	NSString * replace = [[self testFile:@"equal.txt"] stringByAligningWithPatterns:pgs[0]];
 
     NSLog( @"\n%@", replace );
 }
+
+#pragma mark -
 
 - (IBAction)format:(id)sender
 {
@@ -49,6 +51,8 @@
     NSString * string = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
 	return string;
 }
+
+#pragma mark - tests
 
 - (void)testEqualSign
 {
@@ -87,7 +91,7 @@
     NSLog( @"\n%@", replace );
 }
 
-- (void)test2
+- (void)testDefine
 {
 	XAlignPattern * p1 = [[XAlignPattern alloc] init];
     p1.string    = @"^\\s*";
@@ -124,7 +128,7 @@
     NSLog( @"\n%@", replace );
 }
 
-- (void)test3
+- (void)testVariables
 {
 	XAlignPattern * p1 = [[XAlignPattern alloc] init];
     p1.string    = @"^\\s*";
@@ -148,7 +152,7 @@
     NSLog( @"\n%@", replace );
 }
 
-- (void)test4
+- (void)test
 {
 	XAlignPattern * p2 = [[XAlignPattern alloc] init];
     p2.string    = @"\\s*\\w+";
@@ -164,7 +168,7 @@
     NSLog( @"\n%@", replace );
 }
 
-- (void)test5
+- (void)testProperties
 {
 	XAlignPattern * p0 = [[XAlignPattern alloc] init];
     p0.string    = @"^\\s*@property\\s*";

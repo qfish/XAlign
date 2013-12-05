@@ -11,8 +11,8 @@
 		E9314F93184A1F5800869249 /* NSString+XAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = E9314F90184A1F5800869249 /* NSString+XAlign.m */; };
 		E9314F94184A1F5800869249 /* XAlignPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = E9314F92184A1F5800869249 /* XAlignPattern.m */; };
 		E945BCA1184A44AE000E90FA /* patterns.plist in Resources */ = {isa = PBXBuildFile; fileRef = E945BCA0184A44AE000E90FA /* patterns.plist */; };
-		E9C45A4C18499A7800ACB37B /* 4.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9C45A4A18499A7800ACB37B /* 4.txt */; };
-		E9C45A4D18499A7800ACB37B /* 5.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9C45A4B18499A7800ACB37B /* 5.txt */; };
+		E9C45A4C18499A7800ACB37B /* properties.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9C45A4A18499A7800ACB37B /* properties.txt */; };
+		E9C45A4D18499A7800ACB37B /* dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9C45A4B18499A7800ACB37B /* dictionary.txt */; };
 		E9E24B051837D9950040C1B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E24B041837D9950040C1B4 /* Cocoa.framework */; };
 		E9E24B0F1837D9960040C1B4 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B0D1837D9960040C1B4 /* InfoPlist.strings */; };
 		E9E24B111837D9960040C1B4 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E24B101837D9960040C1B4 /* main.m */; };
@@ -20,9 +20,9 @@
 		E9E24B181837D9960040C1B4 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E9E24B171837D9960040C1B4 /* AppDelegate.m */; };
 		E9E24B1B1837D9960040C1B4 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B191837D9960040C1B4 /* MainMenu.xib */; };
 		E9E24B1D1837D9960040C1B4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B1C1837D9960040C1B4 /* Images.xcassets */; };
-		E9E24B391837D9CA0040C1B4 /* equalSign.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B381837D9CA0040C1B4 /* equalSign.txt */; };
-		E9EF7F111847A09A00F2C5D5 /* 2.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9EF7F0F1847A09A00F2C5D5 /* 2.txt */; };
-		E9EF7F121847A09A00F2C5D5 /* 3.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9EF7F101847A09A00F2C5D5 /* 3.txt */; };
+		E9E24B391837D9CA0040C1B4 /* equal.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9E24B381837D9CA0040C1B4 /* equal.txt */; };
+		E9EF7F111847A09A00F2C5D5 /* define.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9EF7F0F1847A09A00F2C5D5 /* define.txt */; };
+		E9EF7F121847A09A00F2C5D5 /* variables.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9EF7F101847A09A00F2C5D5 /* variables.txt */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,8 +32,8 @@
 		E9314F91184A1F5800869249 /* XAlignPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAlignPattern.h; sourceTree = "<group>"; };
 		E9314F92184A1F5800869249 /* XAlignPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAlignPattern.m; sourceTree = "<group>"; };
 		E945BCA0184A44AE000E90FA /* patterns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = patterns.plist; sourceTree = "<group>"; };
-		E9C45A4A18499A7800ACB37B /* 4.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 4.txt; sourceTree = "<group>"; };
-		E9C45A4B18499A7800ACB37B /* 5.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 5.txt; sourceTree = "<group>"; };
+		E9C45A4A18499A7800ACB37B /* properties.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = properties.txt; sourceTree = "<group>"; };
+		E9C45A4B18499A7800ACB37B /* dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dictionary.txt; sourceTree = "<group>"; };
 		E9E24B011837D9950040C1B4 /* main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = main.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9E24B041837D9950040C1B4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		E9E24B071837D9950040C1B4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -49,9 +49,9 @@
 		E9E24B1A1837D9960040C1B4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		E9E24B1C1837D9960040C1B4 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E9E24B231837D9960040C1B4 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		E9E24B381837D9CA0040C1B4 /* equalSign.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = equalSign.txt; sourceTree = "<group>"; };
-		E9EF7F0F1847A09A00F2C5D5 /* 2.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 2.txt; sourceTree = "<group>"; };
-		E9EF7F101847A09A00F2C5D5 /* 3.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = 3.txt; sourceTree = "<group>"; };
+		E9E24B381837D9CA0040C1B4 /* equal.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = equal.txt; sourceTree = "<group>"; };
+		E9EF7F0F1847A09A00F2C5D5 /* define.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = define.txt; sourceTree = "<group>"; };
+		E9EF7F101847A09A00F2C5D5 /* variables.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = variables.txt; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,11 +124,11 @@
 				E9E24B161837D9960040C1B4 /* AppDelegate.h */,
 				E9E24B171837D9960040C1B4 /* AppDelegate.m */,
 				E945BCA0184A44AE000E90FA /* patterns.plist */,
-				E9E24B381837D9CA0040C1B4 /* equalSign.txt */,
-				E9EF7F0F1847A09A00F2C5D5 /* 2.txt */,
-				E9EF7F101847A09A00F2C5D5 /* 3.txt */,
-				E9C45A4A18499A7800ACB37B /* 4.txt */,
-				E9C45A4B18499A7800ACB37B /* 5.txt */,
+				E9E24B381837D9CA0040C1B4 /* equal.txt */,
+				E9EF7F0F1847A09A00F2C5D5 /* define.txt */,
+				E9EF7F101847A09A00F2C5D5 /* variables.txt */,
+				E9C45A4A18499A7800ACB37B /* properties.txt */,
+				E9C45A4B18499A7800ACB37B /* dictionary.txt */,
 				E9E24B191837D9960040C1B4 /* MainMenu.xib */,
 				E9E24B1C1837D9960040C1B4 /* Images.xcassets */,
 				E9E24B0B1837D9960040C1B4 /* Supporting Files */,
@@ -200,14 +200,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9E24B391837D9CA0040C1B4 /* equalSign.txt in Resources */,
+				E9E24B391837D9CA0040C1B4 /* equal.txt in Resources */,
 				E9E24B0F1837D9960040C1B4 /* InfoPlist.strings in Resources */,
 				E9E24B1D1837D9960040C1B4 /* Images.xcassets in Resources */,
 				E9E24B151837D9960040C1B4 /* Credits.rtf in Resources */,
-				E9EF7F111847A09A00F2C5D5 /* 2.txt in Resources */,
-				E9C45A4C18499A7800ACB37B /* 4.txt in Resources */,
-				E9EF7F121847A09A00F2C5D5 /* 3.txt in Resources */,
-				E9C45A4D18499A7800ACB37B /* 5.txt in Resources */,
+				E9EF7F111847A09A00F2C5D5 /* define.txt in Resources */,
+				E9C45A4C18499A7800ACB37B /* properties.txt in Resources */,
+				E9EF7F121847A09A00F2C5D5 /* variables.txt in Resources */,
+				E9C45A4D18499A7800ACB37B /* dictionary.txt in Resources */,
 				E9E24B1B1837D9960040C1B4 /* MainMenu.xib in Resources */,
 				E945BCA1184A44AE000E90FA /* patterns.plist in Resources */,
 			);
