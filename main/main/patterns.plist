@@ -202,7 +202,7 @@
 					<key>needTrim</key>
 					<true/>
 					<key>format</key>
-					<string>  %@</string>
+					<string> %@</string>
 				</dict>
 			</dict>
 			<dict>
