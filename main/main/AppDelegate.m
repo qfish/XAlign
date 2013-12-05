@@ -14,16 +14,16 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	[self testEqualSign];
-	[self testDefine];
-	[self testProperties];
-	[self testVariables];
-//	[self test];
+//	[self testEqualSign];
+//	[self testPatterns:0 file:@"EqualSign.txt"];
 	
-	NSArray * pgs = [XAlignPatternManager patternGroupsWithContentsOfFile:@"patterns"];
-	NSString * replace = [[self testFile:@"equal.txt"] stringByAligningWithPatterns:pgs[0]];
-
-    NSLog( @"\n%@", replace );
+//	[self testDefine];
+	[self testPatterns:1 file:@"Define.txt"];
+	
+	[self testProperty];
+//	[self testVariable];
+//	[self testDictionary];
+	
 }
 
 #pragma mark -
@@ -52,7 +52,17 @@
 	return string;
 }
 
-#pragma mark - tests
+
+#pragma mark - patterns tests
+
+- (void)testPatterns:(NSUInteger)index file:(NSString *)file
+{
+	NSArray * pgs = [XAlignPatternManager patternGroupsWithContentsOfFile:@"patterns"];
+	NSString * replace = [[self testFile:file] stringByAligningWithPatterns:pgs[index]];
+    NSLog( @"\n%@", replace );
+}
+
+#pragma mark - method tests
 
 - (void)testEqualSign
 {
@@ -87,7 +97,7 @@
 	
 	NSArray * patterns = @[p1, p2, p3, p4];
 	
-	NSString * replace = [[self testFile:@"equalSign.txt"] stringByAligningWithPatterns:patterns];
+	NSString * replace = [[self testFile:@"EqualSign.txt"] stringByAligningWithPatterns:patterns];
     NSLog( @"\n%@", replace );
 }
 
@@ -123,12 +133,12 @@
 	
 	NSArray * patterns = @[p1, p2, p3, p4];
 	
-	NSString * replace = [[self testFile:@"2.txt"] stringByAligningWithPatterns:patterns];
+	NSString * replace = [[self testFile:@"Define.txt"] stringByAligningWithPatterns:patterns];
 	
     NSLog( @"\n%@", replace );
 }
 
-- (void)testVariables
+- (void)testVariable
 {
 	XAlignPattern * p1 = [[XAlignPattern alloc] init];
     p1.string    = @"^\\s*";
@@ -147,12 +157,12 @@
 	
 	NSArray * patterns = @[p1, p2];
 	
-	NSString * replace = [[self testFile:@"3.txt"] stringByAligningWithPatterns:patterns];
+	NSString * replace = [[self testFile:@"Variable.txt"] stringByAligningWithPatterns:patterns];
 		
     NSLog( @"\n%@", replace );
 }
 
-- (void)test
+- (void)testDictionary
 {
 	XAlignPattern * p2 = [[XAlignPattern alloc] init];
     p2.string    = @"\\s*\\w+";
@@ -163,12 +173,12 @@
 	
 	NSArray * patterns = @[p2];
 	
-	NSString * replace = [[self testFile:@"3.txt"] stringByAligningWithPatterns:patterns];
+	NSString * replace = [[self testFile:@"Dictionary.txt"] stringByAligningWithPatterns:patterns];
 	
     NSLog( @"\n%@", replace );
 }
 
-- (void)testProperties
+- (void)testProperty
 {
 	XAlignPattern * p0 = [[XAlignPattern alloc] init];
     p0.string    = @"^\\s*@property\\s*";
@@ -209,7 +219,7 @@
 	p4_2.isOptional = YES;
     p4_2.string     = @"(?<=\\*)\\s*\\w+;";
     p4_2.control    = ^ NSString * ( NSUInteger padding, NSString * match ) {
-		return [NSString stringWithFormat:@" %@", match.xtrim];
+		return [NSString stringWithFormat:@"%@", match];
 	};
 
 	XAlignPattern * p5 = [[XAlignPattern alloc] init];
@@ -228,7 +238,7 @@
 	
 	NSArray * patterns = @[p0, p2, p3, p4_1, p4_2, p5, p6];
 	
-	NSString * replace = [[self testFile:@"4.txt"] stringByAligningWithPatterns:patterns];
+	NSString * replace = [[self testFile:@"Property.txt"] stringByAligningWithPatterns:patterns];
 	
     NSLog( @"\n%@", replace );
 }

@@ -4,7 +4,6 @@ static const int kFormatID   = kAudioFormatLinearPCM;
 static const CGSize CollectionViewCellSize			= {.height = 145, .width = 100};
 static NSString *const CollectionViewCellIdentifier = @"MyListenedCell";
 
-
 CALayer *waveLayer = [CALayer layer];
 waveLayer.frame    = (CGRect){
     .origin.x    = (ScreenWidth-40)/2,

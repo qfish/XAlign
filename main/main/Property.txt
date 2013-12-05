@@ -1,0 +1,7 @@
+@property (nonatomic,retain)UITextField * password;
+@property (nonatomic,retain)UITextField * username;
+@property (nonatomic,retain)UIView      * loginView;
+@property (nonatomic,retain)UIButton    * loginButton;
+@property (nonatomic,retain)UIButton    * registerButton;
+@property (nonatomic,retain)UIButton    * autoLoginbutton;
+@property (nonatomic,retain)UIButton    * forgetPasswordButton;
