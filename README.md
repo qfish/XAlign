@@ -7,7 +7,11 @@ An amazing Xcode plugin to align regular code. It can align anything by using cu
 
 Here are some example alignment patterns. Of course you can make your own. The pattern file is here:  `main/main/patterns.plist`, patterns are based on regular expression.
 
-**Tips**: _You may not like the alignment style below, **try it yourself** or **tell me at the  [[Issues]](https://github.com/qfish/XAlign/issues?state=open)**._ :)
+**Tips**: 
+
+   * _You may not like the alignment style below, **try it yourself** or **tell me at the  [[Issues]](https://github.com/qfish/XAlign/issues?state=open)**._ :)
+   * 对齐不需要一次全部对齐，可以分组多对几次，那些等号差的太远的就别让它参与对齐了。
+   * 默认对齐的风格不是你喜欢的，可以自定义，或者提个 [Issues](https://github.com/qfish/XAlign/issues?state=open)。
 
 ### Align by equals sign
 ![Equal](http://github.so/XAlign/images/equal.gif)
