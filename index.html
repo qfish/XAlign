@@ -3,117 +3,162 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <title>XAlign by QFish</title>
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Xalign by qfish</title>
   </head>
 
   <body>
+    <div id="container">
+      <div class="inner">
 
-    <header>
-      <div class="container">
-        <h1>XAlign</h1>
-        <h2>a useful Xcode plugin to align regular code. it can align xnything as u want.</h2>
+        <header>
+          <h1>Xalign</h1>
+          <h2>An amazing Xcode plugin to align regular code. It can align anything by using custom alignment patterns.</h2>
+        </header>
 
-        <section id="downloads">
-          <a href="https://github.com/qfish/XAlign/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/qfish/XAlign/tarball/master" class="btn">Download as .tar.gz</a>
-          <a href="https://github.com/qfish/XAlign" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/qfish/XAlign/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/qfish/XAlign/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/qfish/XAlign" id="view-on-github" class="button"><span>View on GitHub</span></a>
         </section>
-      </div>
-    </header>
 
-    <div class="container">
-      <section id="main_content">
-        <h2>
-<a name="welcome-to-use-xalign" class="anchor" href="#welcome-to-use-xalign"><span class="octicon octicon-link"></span></a>Welcome ~</h2>
+        <hr>
 
-<p>a useful Xcode plugin to align regular code. it can align xnything as u want.</p>
+        <section id="main_content">
+          <h1>
+<a name="xalign" class="anchor" href="#xalign"><span class="octicon octicon-link"></span></a>XAlign</h1>
 
-<h2>What's XAlign</h2>
-
-<h3>1. Align By Fisrt =</h3>
-<p><img src="images/equal.gif"/></p>
-
-<h3>2. Align By Define Group</h3>
-<p><img src="images/define.gif"/></p>
-
-<h3>3. Align By Property Group</h3>
-<p><img src="images/property.gif"/></p>
+<p>An amazing Xcode plugin to align regular code. It can align anything by using custom alignment patterns.</p>
 
 <h2>
-<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
+<a name="whats-xalign" class="anchor" href="#whats-xalign"><span class="octicon octicon-link"></span></a>What's XAlign</h2>
 
-<ol>
-<li><p>Terminally</p>
-<div class="highlight highlight-sh"><pre><span class="nv">$ </span>curl github.so/XAlign/build/install.sh | sh
-</pre></div></li>
+<p>Here are some example alignment patterns. Of course you can make your own. The pattern file is here:  <code>main/main/patterns.plist</code>, patterns are based on regular expression.</p>
+
+<p><strong>Tips</strong>: </p>
+
+<ul>
 <li>
-<p>Manually</p>
+<em>You may not like the alignment style below, <strong>try it yourself</strong> or <strong>tell me at the  <a href="https://github.com/qfish/XAlign/issues?state=open">[Issues]</a></strong>.</em> :)</li>
+<li>对齐不需要一次全部对齐，可以分组多对几次，那些等号差的太远的就别让它参与对齐了。</li>
+<li>默认对齐的风格不是你喜欢的，可以自定义，或者提个 <a href="https://github.com/qfish/XAlign/issues?state=open">Issues</a>。</li>
+</ul><h3>
+<a name="align-by-equals-sign" class="anchor" href="#align-by-equals-sign"><span class="octicon octicon-link"></span></a>Align by equals sign</h3>
+
+<p><img src="http://github.so/XAlign/images/equal.gif" alt="Equal"></p>
+
+<h3>
+<a name="align-by-define-group" class="anchor" href="#align-by-define-group"><span class="octicon octicon-link"></span></a>Align by define group</h3>
+
+<p><img src="http://github.so/XAlign/images/define.gif" alt="Define"></p>
+
+<h3>
+<a name="align-by-property-group" class="anchor" href="#align-by-property-group"><span class="octicon octicon-link"></span></a>Align by property group</h3>
+
+<p><img src="http://github.so/XAlign/images/property.gif" alt="Property"></p>
+
+<h2>
+<a name="install--update" class="anchor" href="#install--update"><span class="octicon octicon-link"></span></a>Install &amp; Update</h2>
+
+<h3>
+<a name="via-command-line" class="anchor" href="#via-command-line"><span class="octicon octicon-link"></span></a>Via command-line</h3>
+
+<div class="highlight highlight-sh"><pre>    <span class="c"># install</span>
+    <span class="nv">$ </span>curl github.so/XAlign/build/install.sh <span class="p">|</span> sh
+
+    or
+
+    <span class="c"># update</span>
+    <span class="nv">$ </span>curl github.so/XAlign/build/update.sh <span class="p">|</span> sh
+</pre></div>
+
+<h3>
+<a name="manually" class="anchor" href="#manually"><span class="octicon octicon-link"></span></a>Manually</h3>
+
 <ol>
 <li>Download this package <a href="http://github.so/XAlign/build/XAlign.tar.gz">XAlign.tar.gz</a>
 </li>
 <li>
-<p>then unpackage it, copy or move the <code>XAlign.xcplugin</code> to follow path:</p>
-</li>
-</ol>
+<p>Unpack it, copy or move the <code>XAlign.xcplugin</code> to the following path:</p>
 
 <pre><code>~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/
 </code></pre>
 
-<p>tips: Quick go in finder <code>cmd+shift+g</code>; if there's no dir <code>Plug-ins</code>, you should make one.</p>
+<p>Tips: To quickly go to Finder type <code>Shift + Cmd + G</code>. If there is no <code>Plug-ins</code> directory, you should make one.</p>
 </li>
-<li><p>then restart your Xcode.</p></li>
-</ol>
-</li>
-</ol>
-
-<h2>
+<li><p>Restart Xcode.</p></li>
+</ol><h2>
 <a name="uninstall" class="anchor" href="#uninstall"><span class="octicon octicon-link"></span></a>Uninstall</h2>
 
-<div class="highlight highlight-sh"><pre><span class="nv">$ </span>curl github.so/XAlign/build/uninstall.sh | sh
-</pre></div>
+<pre><code>$ curl github.so/XAlign/build/uninstall.sh | sh
+</code></pre>
 
 <h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
 
 <h3>
-<a name="where-in-ur-xcode" class="anchor" href="#where-in-ur-xcode"><span class="octicon octicon-link"></span></a>Where in ur Xcode</h3>
+<a name="in-xcode" class="anchor" href="#in-xcode"><span class="octicon octicon-link"></span></a>In Xcode</h3>
 
-<p><pre><code>Xcode -&gt; Edit -&gt; XAlign </code></pre></p>
+<pre><code>Xcode -&gt; Edit -&gt; XAlign 
+</code></pre>
 
 <h3>
-<a name="auto-align-shortcut" class="anchor" href="#auto-align-shortcut"><span class="octicon octicon-link"></span></a>Auto Align Shortcut</h3>
+<a name="auto-align-shortcut-default" class="anchor" href="#auto-align-shortcut-default"><span class="octicon octicon-link"></span></a>Auto Align Shortcut (default)</h3>
 
-<p><pre><code>shfit + cmd + x</code></pre></p>
+<pre><code>Shift + Cmd + X
+</code></pre>
+
+<p>You can choose the shortcut in the Settings panel, <code>Xcode -&gt; Edit -&gt; XAlign -&gt; Setting</code>.</p>
 
 <h2>
-<a name="not-the-end" class="anchor" href="#not-the-end"><span class="octicon octicon-link"></span></a>Not the end</h2>
+<a name="trouble-shooting" class="anchor" href="#trouble-shooting"><span class="octicon octicon-link"></span></a>Trouble-Shooting</h2>
 
-<p>I want to write more, but i am sleepy zzzzz. :)</p>
+<ul>
+<li><a href="https://github.com/qfish/XAlign/wiki">wiki</a></li>
+</ul><h2>
+<a name="want-to-help" class="anchor" href="#want-to-help"><span class="octicon octicon-link"></span></a>Want to help</h2>
 
-<p>TODO: </p>
+<ul>
+<li><a href="https://github.com/qfish/XAlign/">Star this repository</a></li>
+<li><a href="https://github.com/qfish/XAlign/issues">Bugs Report &amp; Advice</a></li>
+<li><a href="https://github.com/qfish/XAlign/pulls">Fork &amp; Pull Request</a></li>
+</ul><h2>
+<a name="special-thanks-to" class="anchor" href="#special-thanks-to"><span class="octicon octicon-link"></span></a>Special thanks to</h2>
 
-<ol>
-<li>[x] how to customize ur align pattern</li>
-<li>[x] my xcode plugin template</li>
+<ul>
+<li>
+<p><a href="http://www.geek-zoo.com"><img src="http://geek-zoo.com/images/logo-01.png" alt="Geek-Zoo"></a></p>
+
+<p>They provide awesome design and development works continues to help the open-source community even better.</p>
+</li>
+<li>
+<p><a href="https://github.com/gavinkwoe/BeeFramework">BeeFramework</a> </p>
+
+<p>BeeFramework is a new generation of development framework which makes faster and easier app development, Build your app by geek's way.</p>
+</li>
+</ul><h3>
+<a name="todo" class="anchor" href="#todo"><span class="octicon octicon-link"></span></a>Todo:</h3>
+
+<ul>
+<li>[x] How to customize your alignment patterns</li>
+<li>[x] My Xcode plugin template</li>
 <li>[x] etc.</li>
-</ol>
+</ul>
+        </section>
 
-<!--h2>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h2>
+        <footer>
+          Xalign is maintained by <a href="https://github.com/qfish">qfish</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
 
-<p>I'm looking forward to your contributions.</p>
-
-<h3>
-<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
-
-<p>I'm <a href="https://github.com/qfish" class="user-mention">@QFish</a>.</p-->
-      </section>
+        
+      </div>
     </div>
-  
-</body>
+  </body>
 </html>
