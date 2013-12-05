@@ -87,6 +87,7 @@ You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> S
 
 ### Todo:
 
+- [x] Support Xcode4. T_T
 - [x] How to customize your alignment patterns
 - [x] My Xcode plugin template
 - [x] etc.
