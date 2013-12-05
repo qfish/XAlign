@@ -210,7 +210,7 @@
     p3_1.isOptional = YES;
     p3_1.string     = @"\\s*\\w+;";
     p3_1.control    = ^ NSString * ( NSUInteger padding, NSString * match ) {
-		return [NSString stringWithFormat:@"  %@", match.xtrim];
+		return [NSString stringWithFormat:@" %@", match.xtrim];
 	};
 
 	XAlignPattern * p3_2 = [[XAlignPattern alloc] init];
