@@ -58,7 +58,6 @@ Shift + Cmd + X
 ```
 You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> Setting`.
 
-
 ## Trouble-Shooting
   
   * [wiki](https://github.com/qfish/XAlign/wiki)
@@ -69,7 +68,18 @@ You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> S
   * [Bugs Report & Advice](https://github.com/qfish/XAlign/issues)
   * [Fork & Pull Request](https://github.com/qfish/XAlign/pulls)
 
-## TODO:
+## Special thanks to
+
+* [![Geek-Zoo](http://geek-zoo.com/images/logo-01.png)](http://www.geek-zoo.com)
+
+  They provide awesome design and development works continues to help the open-source community even better.
+
+
+* [BeeFramework](https://github.com/gavinkwoe/BeeFramework) 
+
+  BeeFramework is a new generation of development framework which makes faster and easier app development, Build your app by geek's way.
+
+### Todo:
 
 - [x] How to customize your alignment patterns
 - [x] My Xcode plugin template
