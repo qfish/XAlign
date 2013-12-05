@@ -6,7 +6,7 @@
 		<key>id</key>
 		<string>0</string>
 		<key>title</key>
-		<string>By First =</string>
+		<string>By First    =</string>
 		<key>selector</key>
 		<string>align:</string>
 		<key>specifier</key>
@@ -166,50 +166,54 @@
 			</dict>
 			<dict>
 				<key>string</key>
-				<string>(?&lt;=\))\s*(?=\w)</string>
+				<string>(?&lt;=)\)\s*</string>
 				<key>tailMode</key>
 				<integer>2</integer>
 				<key>control</key>
 				<dict>
 					<key>string</key>
-					<string> </string>
+					<string>) </string>
 				</dict>
 			</dict>
 			<dict>
 				<key>string</key>
-				<string>\s+\*</string>
-				<key>isOptional</key>
-				<true/>
+				<string>\w+</string>
+				<key>matchMode</key>
+				<integer>2</integer>
 				<key>control</key>
 				<dict>
-					<key>string</key>
-					<string> * </string>
-				</dict>
-			</dict>
-			<dict>
-				<key>string</key>
-				<string>(?&lt;!\*)\s*\w+;</string>
-				<key>isOptional</key>
-				<true/>
-				<key>control</key>
-				<dict>
-					<key>format</key>
-					<string>   %@</string>
-					<key>needTrim</key>
+					<key>needPadding</key>
 					<true/>
+					<key>paddingString</key>
+					<string> </string>
+					<key>isMatchPadding</key>
+					<true/>
+				</dict>
+			</dict>
+			<dict>
+				<key>string</key>
+				<string>\s*\w+;</string>
+				<key>isOptional</key>
+				<true/>
+				<key>control</key>
+				<dict>
 					<key>needFormat</key>
 					<true/>
+					<key>needTrim</key>
+					<true/>
+					<key>format</key>
+					<string>  %@</string>
 				</dict>
 			</dict>
 			<dict>
 				<key>string</key>
-				<string>(?&lt;=\*)\s*\w+;</string>
+				<string>\s*\*+\s*\w+;</string>
 				<key>isOptional</key>
 				<true/>
 				<key>control</key>
 				<dict>
 					<key>format</key>
-					<string>%@</string>
+					<string> %@</string>
 					<key>needTrim</key>
 					<true/>
 					<key>needFormat</key>
