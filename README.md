@@ -23,6 +23,11 @@ Here are some example alignment patterns. Of course you can make your own. The p
 ### Align by property group
 ![Property](http://github.so/XAlign/images/property.gif)
 
+### Todo:
+
+- [x] Support Xcode4.
+- [x] More easy to customize alignment patterns.
+
 ## Install & Update
 
 ### Via command-line
@@ -85,11 +90,4 @@ You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> S
 * [BeeFramework](https://github.com/gavinkwoe/BeeFramework) 
 
   BeeFramework is a new generation of development framework which makes faster and easier app development, Build your app by geek's way.
-
-### Todo:
-
-- [x] Support Xcode4. T_T
-- [x] How to customize your alignment patterns
-- [x] My Xcode plugin template
-- [x] etc.
 
