@@ -1,13 +1,6 @@
-static const int kSampleRate = 44100; // asdasd
-// asdasda = asdsd;
-static const int kFormatID   = kAudioFormatLinearPCM;
-static const CGSize CollectionViewCellSize			= {.height = 145, .width = 100};
-static NSString *const CollectionViewCellIdentifier = @"MyListenedCell";
+		static const CGSize CollectionViewCellSize			= {.height = 145, .width = 100};
+		static const int kSampleRate = 44100; // asdasd
+	static const int kFormatID   = kAudioFormatLinearPCM;
+	static NSString *const CollectionViewCellIdentifier = @"MyListenedCell"; /*sda
 
-CALayer *waveLayer = [CALayer layer];
-waveLayer.frame    = (CGRect){
-    .origin.x    = (ScreenWidth-40)/2,
-    .origin.y    = _recordView.frame.origin.y+7,
-    .size.width  = 40,
-    .size.height = 40
-};
+	// sdasd

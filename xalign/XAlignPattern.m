@@ -30,21 +30,6 @@
 #import "XAlignPattern.h"
 #import "NSString+XAlign.h"
 
-@implementation XAlignPadding
-
-+ (NSString *)stringWithFormat:(NSString *)format
-{
-	// {padding * @" "}
-	// {match.trim}
-	// {match}
-	// @" %@", {match}
-	// 
-	
-	return nil;
-}
-
-@end
-
 #pragma mark -
 
 @implementation XAlignPattern

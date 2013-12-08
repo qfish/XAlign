@@ -38,6 +38,14 @@
 	return self;
 }
 
+- (void)setupWithCount:(NSUInteger)count
+{
+	for ( int i=0; i<count; i++ )
+	{
+		[self.partials addObject:@""];
+	}
+}
+
 - (int)sumOfPaddings:(NSArray *)paddings atRange:(NSRange)range
 {
 	int sum = 0;
@@ -63,36 +71,45 @@
 		NSUInteger padding = [paddings[i] integerValue];
 		NSString * tempString = nil;
 		
-		if ( partial.length )
+		if ( partial.length && -1 != padding )
 		{
 			/*
 			 i: 0 1 2 3 4 5 6 7 8 9 10
-			 ----- --- --- --- ----
-			 p:   0    1   2   3   4
+			 -- --- --- --- --- ------
+			 p:  0   1   2   3    4
 			 */
 			
-			NSUInteger pIndex = i == 0 ? 0 : ( ( i + 1 ) / 2 - 1 );
+			NSUInteger pIndex = 0;
+			
+			if ( i == self.partials.count - 1 )
+			{
+				pIndex = patterns.count - 1;
+			}
+			else
+			{
+				pIndex = i / 2;
+			}
 			
 			XAlignPattern * pattern = patterns[pIndex];
 			
 			// build string
-			
-			if ( 0 == i )
+			// tail
+			if ( i == self.partials.count )
 			{
-				if ( XAlignPaddingModeNone == pattern.headMode )
+				if ( XAlignPaddingModeNone == pattern.tailMode )
 					tempString = partial;
 				else
-					tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
+					tempString = [partial stringByPaddingToLength:padding withString:@"+" startingAtIndex:0];
 			}
 			else
 			{
 				switch ( i % 2 )
 				{
-					case 0: // tail
-						if ( XAlignPaddingModeNone == pattern.tailMode )
+					case 0: // head
+						if ( XAlignPaddingModeNone == pattern.headMode )
 							tempString = partial;
 						else
-							tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
+							tempString = [partial stringByPaddingToLength:padding withString:@"~" startingAtIndex:0];
 						break;
 					case 1: // match
 						tempString = pattern.control(padding, partial);
@@ -190,8 +207,97 @@
 		NSString * trimLine = line.xtrimTail;
 		
 		XAlignLine * xline = nil;
+		NSString * segment = trimLine;
+		
+		for ( int pIndex = 0; pIndex < patterns.count; pIndex++ )
+		{
+			XAlignPattern * pattern = patterns[pIndex];
+			
+			// separate the string by regex
+			NSString * match = nil;
+			NSArray * components = [segment componentsSeparatedByRegexPattern:pattern.string position:pattern.position match:&match];
+			
+			BOOL isMatched  = nil != match;
+			BOOL isLastPattern = pIndex == patterns.count - 1;
+			// check whether matched
+			
+			NSString * head = nil;
+			NSString * tail = nil;
+			
+			if ( !isMatched )
+			{
+				if ( pattern.isOptional )
+				{
+                    head  = @"";
+                    tail  = segment;
+                    match = @"";
+				}
+				else
+				{
+					xline = nil;
+					break;
+				}
+			}
+			else
+			{
+				head = [components firstObject];
+				tail = [components lastObject];
+			}
+			
+			if ( nil == xline )
+			{
+				xline = [XAlignLine line];
+				[xline setupWithCount:partialCount];
+			}
+			
+			NSInteger headIndex  = pIndex * 2;
+			NSInteger matchIndex = pIndex * 2 + 1;
+			NSInteger tailIndex  = pIndex * 2 + 2;
+			
+			if ( isMatched )
+			{
+				____STEP_IIN( head )
+				
+				if ( head.length )
+				{
+					[self setPaddingForPartial:head
+									   atIndex:headIndex
+									ofPaddings:paddings
+										  mode:pattern.headMode];
+					// set head partial
+					xline.partials[headIndex] = head;
+				}
+				
+				____STEP_OUT( head )
+				
+				____STEP_IIN( match )
 
-		[trimLine processLine:&xline level:(int)(patterns.count - 1) patterns:patterns paddings:paddings];
+				if ( match.length )
+				{
+					// get index for match padding
+					[self setPaddingForPartial:match
+									   atIndex:matchIndex
+									ofPaddings:paddings
+										  mode:pattern.matchMode];
+					// set match partial
+					xline.partials[matchIndex] = match;
+				}
+				____STEP_OUT( match )
+				
+			}
+			
+			if ( isLastPattern )
+			{
+				[self setPaddingForPartial:tail
+								   atIndex:tailIndex
+								ofPaddings:paddings
+									  mode:pattern.tailMode];
+				
+				xline.partials[tailIndex] = tail;
+			}
+			
+			segment = tail; // for next loop
+		}
 		
 		if ( !xline )
 		{
@@ -227,127 +333,28 @@
 	return newLines;
 }
 
-- (void)processLine:(XAlignLine **)line level:(int)level patterns:(NSArray *)patterns paddings:(NSMutableArray *)paddings
+- (void)setPaddingForPartial:(NSString *)partial atIndex:(NSUInteger)index ofPaddings:(NSMutableArray *)paddings mode:(XAlignPaddingMode)mode
 {
-	if ( level < 0 )
-		return;
-	
-	XAlignPattern * pattern = patterns[level];
-	
-	NSString * match = nil;
-	NSArray * components = [self componentsSeparatedByRegexPattern:pattern.string position:pattern.position match:&match];
-
-	if ( !match )
-	{
-		if ( !pattern.isOptional )
-		{
-			*line = nil;
-			return;
-		}
-		else
-		{
-			components = @[ self, @"" ];
-			match = @"";
-		}
-	}
-	
-	if ( nil == *line )
-		*line = [XAlignLine line];
-	
-	XAlignLine * xline = *line;
-	
-	NSString * head = [components firstObject];
-	NSString * tail = [components  lastObject];
-	
-	[head processLine:line level:(level-1) patterns:patterns paddings:paddings];
-	
-____STEP_IIN( head )
-	if ( 0 == level && head )
-	{
-		// add head partial
-		[xline.partials addObject:head];
-		// get index for match padding
-		NSInteger headIndex      = level;
-		NSInteger headPadding    = [paddings[headIndex] integerValue];
-		NSInteger newMatchPadding = head.xlength;
-		switch ( pattern.headMode )
-		{
-			case XAlignPaddingModeMin:
-			{
-				headPadding = headPadding == -1 ? NSNotFound : headPadding;
-				paddings[headIndex] = @( MIN( headPadding , newMatchPadding ) );
-			}
-				break;
-			case XAlignPaddingModeMax:
-			{
-				headPadding = headPadding == -1 ? -1 : headPadding;
-				paddings[headIndex] = @( MAX( headPadding , newMatchPadding ) );
-			}
-				break;
-			default:
-				paddings[headIndex] = @( newMatchPadding );
-				break;
-		}
-	}
-____STEP_OUT( head )
-	
-____STEP_IIN( match )
-	// add match partial
-	[xline.partials addObject:match];
-	// get index for match padding
-    NSInteger matchIndex      = level * 2 + 1;
-    NSInteger matchPadding    = [paddings[matchIndex] integerValue];
-    NSInteger newMatchPadding = match.xlength;
-	switch ( pattern.matchMode )
+	NSInteger padding    = [paddings[index] integerValue];
+	NSInteger newPadding = partial.xlength;
+	switch ( mode )
 	{
 		case XAlignPaddingModeMin:
 		{
-			matchPadding = matchPadding == -1 ? NSNotFound : matchPadding;
-			paddings[matchIndex] = @( MIN( matchPadding , newMatchPadding ) );
+			padding = padding == -1 ? NSNotFound : padding;
+			paddings[index] = @( MIN( padding , newPadding ) );
 		}
 			break;
 		case XAlignPaddingModeMax:
 		{
-			matchPadding = matchPadding == -1 ? -1 : matchPadding;
-			paddings[matchIndex] = @( MAX( matchPadding , newMatchPadding ) );
+			padding = padding == -1 ? -1 : padding;
+			paddings[index] = @( MAX( padding , newPadding ) );
 		}
 			break;
 		default:
-			paddings[matchIndex] = @( newMatchPadding );
+			paddings[index] = @( newPadding );
 			break;
 	}
-____STEP_OUT( match )
-	
-____STEP_IIN( tail )
-	// add tail partial
-	[xline.partials addObject:tail];
-	// get index for match padding
-	NSInteger tailIndex = level * 2 + 2;
-	NSInteger tailPadding = [paddings[tailIndex] integerValue];
-	NSInteger newTailPadding = tail.xlength;
-	switch ( pattern.tailMode )
-	{
-		case XAlignPaddingModeMin:
-		{
-			tailPadding = tailPadding == -1 ? NSNotFound : tailPadding;
-			paddings[tailIndex] = @( MIN( tailPadding , newTailPadding ) );
-		}
-			break;
-		case XAlignPaddingModeMax:
-		{
-			tailPadding = tailPadding == -1 ? -1 : tailPadding;
-			paddings[tailIndex] = @( MAX( tailPadding , newTailPadding ) );
-		}
-			break;
-		default:
-			paddings[tailIndex] = @( newTailPadding );
-			break;
-	}
-	
-____STEP_OUT( tail )
-	
-	//	NSLog( @"%d| head:%d| match:%d| tail:%d", level, level+1, level+2, level+3 );
-	//	NSLog( @"\n  level:%d %@\n   head:%@\n   tail:%@\nmatch:%@", level, pattern, head, tail, match );
 }
 
 - (NSArray *)componentsSeparatedByRegexPattern:(NSString *)pattern position:(XAlignPosition)position match:(NSString **)match
@@ -360,7 +367,7 @@ ____STEP_OUT( tail )
 		NSLog( @"[NSString+XAlign](%s): pattern is illegal. error: %@", __PRETTY_FUNCTION__, error );
 		return nil;
 	}
-
+	
 	NSArray * matches = [regex matchesInString:self options:NSMatchingReportProgress range:NSMakeRange(0, self.length)];
 	
 	if ( 0 == matches.count )
@@ -368,11 +375,11 @@ ____STEP_OUT( tail )
 	
 	NSTextCheckingResult * matchResult = nil;
 	
-//	for ( matchResult in matches )
-//	{
-//		NSLog( @"|||%@|||", [self substringWithRange:NSMakeRange(0, NSMaxRange([matchResult range]))]);
-//	}
-		
+	//	for ( matchResult in matches )
+	//	{
+	//		NSLog( @"|||%@|||", [self substringWithRange:NSMakeRange(0, NSMaxRange([matchResult range]))]);
+	//	}
+	
 	switch ( position )
 	{
 		case XAlignPositionFisrt:
@@ -392,12 +399,12 @@ ____STEP_OUT( tail )
 	
 	if ( nil == match )
 		return nil;
-
+	
 	*match = [self substringWithRange:[matchResult range]];
 	
 	NSRange headRange = NSMakeRange( 0, [matchResult range].location );
 	NSRange tailRange = NSMakeRange( NSMaxRange([matchResult range]), self.length - NSMaxRange([matchResult range]) );
-
+	
 	NSString * head = [self substringWithRange:headRange] ?: @"";
 	NSString * tail = [self substringWithRange:tailRange] ?: @"";
 	

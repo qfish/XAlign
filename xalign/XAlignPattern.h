@@ -23,10 +23,6 @@ typedef enum XAlignPaddingMode {
 typedef NSString * (^XAlignPatternControlBlockU)(NSUInteger padding);
 typedef NSString * (^XAlignPatternControlBlockUS)(NSUInteger padding, NSString * match);
 
-@interface XAlignPadding : NSObject
-+ (NSString *)stringWithFormat:(NSString *)format;
-@end
-
 @interface XAlignPattern : NSObject
 @property (nonatomic, assign) BOOL isOptional;
 @property (nonatomic, retain) NSString * string;

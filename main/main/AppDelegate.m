@@ -15,13 +15,15 @@
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
 //	[self testEqualSign];
+	[self testEqualSign2];
 //	[self testPatterns:0 file:@"EqualSign.txt"];
 	
 //	[self testDefine];
 //	[self testPatterns:1 file:@"Define.txt"];
-	
-	[self testProperty];
-	[self testPatterns:2 file:@"Property.txt"];
+
+//	[self testProperty];
+	[self testProperty2];
+//	[self testPatterns:2 file:@"Property.txt"];
 
 //	[self testVariable];
 //	[self testPatterns:3 file:@"Variable.txt"];
@@ -69,12 +71,44 @@
 
 #pragma mark - method tests
 
+- (void)testEqualSign2
+{
+	XAlignPattern * p1 = [[XAlignPattern alloc] init];
+    p1.string    = @"^\\s*(?!/)";
+    p1.matchMode = XAlignPaddingModeMin;
+	p1.control = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return [@"<>" stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
+	};
+	
+	XAlignPattern * p2 = [[XAlignPattern alloc] init];
+	p2.headMode = XAlignPaddingModeMax;
+	p2.tailMode = XAlignPaddingModeMax;
+	p2.position = XAlignPositionFisrt;
+	p2.string = @"\\s*(?<=[\\w\\s])[\\|\\+\\-\\*]?=(?=[\\w\\s])\\s*"; // just '=', exclude sth like '==' etc.
+	p2.control = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return @"< = >";
+	};
+	
+	XAlignPattern * pComment = [[XAlignPattern alloc] init];
+    pComment.headMode = XAlignPaddingModeMax;
+    pComment.tailMode = XAlignPaddingModeMax;
+    pComment.isOptional = YES;
+    pComment.string     = @"\\s*[(//)(/\\*)].*$";
+    pComment.control    = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return [NSString stringWithFormat:@"< %@>", match.xtrim];
+	};
+	
+	NSArray * patterns = @[p1, p2, pComment];
+	NSString * replace = [[self testFile:@"EqualSign.txt"] stringByAligningWithPatterns:patterns];
+	NSLog( @"\n%@", replace );
+
+}
+
 - (void)testEqualSign
 {
 	XAlignPattern * p1 = [[XAlignPattern alloc] init];
     p1.string    = @"^\\s*";
     p1.matchMode = XAlignPaddingModeMin;
-    p1.tailMode  = XAlignPaddingModeMax;
 	p1.control = ^ NSString * ( NSUInteger padding, NSString * match ) {
 		return [@"" stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
 	};
@@ -141,6 +175,39 @@
 	NSString * replace = [[self testFile:@"Define.txt"] stringByAligningWithPatterns:patterns];
 	
     NSLog( @"\n%@", replace );
+}
+
+- (void)testDefine2
+{
+	XAlignPattern * p1 = [[XAlignPattern alloc] init];
+    p1.string    = @"^\\s*";
+    p1.matchMode = XAlignPaddingModeMin;
+	p1.control = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return [@"<>" stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
+	};
+	
+	XAlignPattern * p2 = [[XAlignPattern alloc] init];
+	p2.headMode = XAlignPaddingModeMax;
+	p2.tailMode = XAlignPaddingModeMax;
+	p2.position = XAlignPositionFisrt;
+	p2.string = @"\\s*(?<=[\\w\\s])[\\|\\+\\-\\*]?=(?=[\\w\\s])\\s*"; // just '=', exclude sth like '==' etc.
+	p2.control = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return @"< = >";
+	};
+	
+	XAlignPattern * pComment = [[XAlignPattern alloc] init];
+    pComment.headMode = XAlignPaddingModeMax;
+    pComment.tailMode = XAlignPaddingModeMax;
+    pComment.isOptional = YES;
+    pComment.string     = @"\\s*[(//)(/\\*)].*$";
+    pComment.control    = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return [NSString stringWithFormat:@"< %@>", match.xtrim];
+	};
+	
+	NSArray * patterns = @[p1, p2, pComment];
+	NSString * replace = [[self testFile:@"EqualSign.txt"] stringByAligningWithPatterns:patterns];
+	NSLog( @"\n%@", replace );
+	
 }
 
 - (void)testVariable
@@ -241,4 +308,39 @@
     NSLog( @"\n%@", replace );
 }
 
+- (void)testProperty2
+{
+	XAlignPattern * p0 = [[XAlignPattern alloc] init];
+    p0.string   = @"^\\s*@property\\s*";
+    p0.control  = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return @"<@property >";
+	};
+	
+	XAlignPattern * p1 = [[XAlignPattern alloc] init];
+    p1.matchMode = XAlignPaddingModeMax;
+    p1.string   = @"\\(.*\\)\\s*";
+    p1.control  = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		NSString * result = [match.xtrim stringByPaddingToLength:padding withString:@"=" startingAtIndex:0];
+		return [NSString stringWithFormat:@"<%@ >", result];
+	};
+	
+	XAlignPattern * p2 = [[XAlignPattern alloc] init];
+    p2.headMode = XAlignPaddingModeMax;
+    p2.string    = @"[\\s\\*]+(?=\\w+;)";
+    p2.control   = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return [NSString stringWithFormat:@"< %@>", match.xtrim];
+	};
+	
+	XAlignPattern * pComment = [[XAlignPattern alloc] init];
+    pComment.headMode = XAlignPaddingModeMax;
+    pComment.isOptional = YES;
+    pComment.string     = @"[(\\s*//)(\\s*/\\*)].*$";
+    pComment.control    = ^ NSString * ( NSUInteger padding, NSString * match ) {
+		return [NSString stringWithFormat:@"< %@>", match.xtrim];
+	};
+	
+	NSArray * patterns = @[p0, p1, p2, pComment];
+	NSString * replace = [[self testFile:@"Property.txt"] stringByAligningWithPatterns:patterns];
+	NSLog( @"\n%@", replace );
+}
 @end

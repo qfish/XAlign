@@ -1,15 +1,4 @@
-@property (nonatomic, retain) UITextField *textView;
-@property (nonatomic, retain) UIButton     editButton;
-@property (nonatomic, assign) int          editButton;
-@property (nonatomic, copy  ) UIButton    *editButton;
-@property (nonatomic,retain ) UITextField *password;
-@property (nonatomic,retain ) UITextField *username;
-@property (nonatomic,retain ) UIView      *loginView;
-@property (nonatomic,retain ) UIButton    *registerButton;
-@property (nonatomic,retain ) UIButton    *_autoLoginbutton;
-@property (nonatomic,retain ) UIButton    *forgetPasswordButton;
-
-@property (nonatomic,retain ) IBOutlet UITextField *loginButton;
-@property (nonatomic,retain ) IBOutlet UIButton    *loginButton;
-@property (nonatomic,retain ) IBOutlet int          _loginButton;
-@property (nonatomic,retain ) IBOutlet UIButton    *loginButton;
+@property (strong, nonatomic123456789) UserModel       * userInfo;
+@property (strong, nonatomic1234567)NSURL     *fileURL; /* sdas
+@property (weak, nonatomic123456790) IBOutlet UIButton * skipButton; // sdasdas
+@property (weak, nonatomic1234567901234) IBOutlet UILabel  *displayLabel; // sdasd
