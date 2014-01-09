@@ -3,6 +3,7 @@
     PACKAGE="XAlign.tar.gz"
     PLUGIN_DIR="$HOME/Library/Application Support/Developer/Shared/Xcode/Plug-ins"
     XALIGN_PATH="$PLUGIN_DIR/XAlign.xcplugin"
+    DOMAIN="http://qfi.sh"
 
 # check path, create dir if not exist, remove id 
     
@@ -16,8 +17,8 @@
 
 # Download the package and unpack it.
 
-  sudo curl -o "$PACKAGE" qfi.sh/XAlign/build/"$PACKAGE"
-  # sudo wget qfi.sh/XAlign/build/"$PACKAGE" -O "$PACKAGE"
+  sudo curl -o "$PACKAGE" $DOMAIN/XAlign/build/"$PACKAGE"
+  # sudo wget $DOMAIN/XAlign/build/"$PACKAGE" -O "$PACKAGE"
   sudo tar xzf "$PACKAGE" -C "$PLUGIN_DIR"
 
 # remove tmp files
@@ -30,5 +31,5 @@
   echo
   echo "More info: https://github.com/qfish/XAlign/"
   echo
-  echo "To uninstall XAlign, \`curl qfi.sh/XAlign/build/uninstall.sh | sh\`"
+  echo "To uninstall XAlign, \`curl $DOMAIN/XAlign/build/uninstall.sh | sh\`"
   echo "."

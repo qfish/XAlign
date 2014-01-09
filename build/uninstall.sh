@@ -2,6 +2,7 @@
 
     PLUGIN_DIR="$HOME/Library/Application Support/Developer/Shared/Xcode/Plug-ins"
     XALIGN_PATH="$PLUGIN_DIR/XAlign.xcplugin"
+    DOMAIN="http://qfi.sh"
 
 # check path, remove if exist
     
@@ -13,7 +14,7 @@
 
 # done 
   echo
-  echo "XAlign is uninstalled. Thank U for using it."
+  echo "XAlign is uninstalled.\nPlease Restart Your Xcode.\nThank U for using it."
   echo
-  echo "To install XAlign, \`curl qfi.sh/XAlign/build/install.sh | sh\`"
+  echo "To install XAlign, \`curl $DOMAIN/XAlign/build/install.sh | sh\`"
   echo "."
