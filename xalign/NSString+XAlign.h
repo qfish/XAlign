@@ -16,9 +16,9 @@
 #import "XAlignPattern.h"
 
 @interface NSString (XAlign)
-- (NSString *)xtrim;
-- (NSString *)xtrimTail;
 - (NSUInteger)xlength;
+- (NSString *)xtrim;
+- (NSString *)xTailTrim;
 - (NSString *)stringByAligningWithPatterns:(NSArray *)patterns;
 - (NSString *)stringByAligningWithPatterns:(NSArray *)patterns partialCount:(NSUInteger)count;
 - (NSArray *)componentsSeparatedByRegexPattern:(NSString *)pattern position:(XAlignPosition)position match:(NSString **)match;

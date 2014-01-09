@@ -105,7 +105,7 @@ DEF_SINGLETON( XAlignPlugin );
 	if ( !self.selection )
 		return;
 	
-	NSArray * patternGroup = [XAlignPatternManager patternGroupMatchWithString:self.selection];
+	NSArray * patternGroup = [XAlignPatternManager patternGroupMatchedWithString:self.selection];
 	
 	if ( !patternGroup )
 		return;

@@ -101,20 +101,13 @@ DEF_SINGLETON( XAlignPatternManager );
 	return nil;
 }
 
-+ (NSArray *)patternGroupMatchWithString:(NSString *)string
++ (NSArray *)patternGroupMatchedWithString:(NSString *)string
 {
 	NSDictionary * dict = [self rawPatternWithString:string];
 	return [self patternGroupWithDictinary:dict];
 }
 
 #pragma mark - patternGroup
-
-+ (NSArray *)patternGroupsWithContentsOfFile:(NSString *)name
-{
-	NSString * filePath = [[NSBundle mainBundle] pathForResource:name ofType:@"plist"];
-	NSArray * rawArray = [[NSArray alloc]initWithContentsOfFile:filePath];
-    return [self patternGroupsWithRawArray:rawArray];
-}
 
 + (NSArray *)patternGroupsWithRawArray:(NSArray *)rawArray
 {
@@ -134,6 +127,13 @@ DEF_SINGLETON( XAlignPatternManager );
 	}
 	
 	return patternGroups;
+}
+
++ (NSArray *)patternGroupsWithContentsOfFile:(NSString *)fileName
+{
+	NSString * filePath = [[NSBundle mainBundle] pathForResource:fileName ofType:@"plist"];
+	NSArray * rawArray = [[NSArray alloc] initWithContentsOfFile:filePath];
+    return [self patternGroupsWithRawArray:rawArray];
 }
 
 + (NSArray *)patternGroupWithDictinary:(NSDictionary *)dictionary
@@ -173,13 +173,13 @@ DEF_SINGLETON( XAlignPatternManager );
 
 			XAlignPattern * p = [[XAlignPattern alloc] init];
 			
-			p.string    = string;
-			p.headMode  = headMode;
-			p.tailMode  = tailMode;
-			p.matchMode = matchMode;
-			p.position  = position;
-			p.isOptional = isOptional;
-			p.control   = ^ NSString * ( NSUInteger padding, NSString * match )
+            p.string     = string;
+			p.position   = position;
+            p.headMode   = headMode;
+            p.tailMode   = tailMode;
+            p.matchMode  = matchMode;
+            p.isOptional = isOptional;
+            p.control    = ^ NSString * ( NSUInteger padding, NSString * match )
 			{
 				if ( needFormat || needPadding || needFormatWhenFound )
 				{

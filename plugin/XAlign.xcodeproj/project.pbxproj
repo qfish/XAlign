@@ -11,6 +11,7 @@
 		E945FD06184DF37800EC90D5 /* SettingWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = E945FD04184DF37800EC90D5 /* SettingWindowController.m */; };
 		E945FD07184DF37800EC90D5 /* SettingWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = E945FD05184DF37800EC90D5 /* SettingWindowController.xib */; };
 		E958D428184DE3C600A4A3AC /* setting.plist in Resources */ = {isa = PBXBuildFile; fileRef = E958D427184DE3C600A4A3AC /* setting.plist */; };
+		E95CA6D9185F0EC70041B42B /* blade.m in Sources */ = {isa = PBXBuildFile; fileRef = E95CA6D8185F0EC70041B42B /* blade.m */; };
 		E9750DB41837A15F0044F9C7 /* DVTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9750DB31837A15F0044F9C7 /* DVTKit.framework */; };
 		E9750DB81837A1700044F9C7 /* DVTFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9750DB51837A1700044F9C7 /* DVTFoundation.framework */; };
 		E9750DB91837A1700044F9C7 /* IDEFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9750DB61837A1700044F9C7 /* IDEFoundation.framework */; };
@@ -30,6 +31,7 @@
 		E945FD04184DF37800EC90D5 /* SettingWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingWindowController.m; sourceTree = "<group>"; };
 		E945FD05184DF37800EC90D5 /* SettingWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingWindowController.xib; sourceTree = "<group>"; };
 		E958D427184DE3C600A4A3AC /* setting.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = setting.plist; sourceTree = "<group>"; };
+		E95CA6D8185F0EC70041B42B /* blade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = blade.m; sourceTree = "<group>"; };
 		E9750DB31837A15F0044F9C7 /* DVTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTKit.framework; path = ../../../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTKit.framework; sourceTree = "<group>"; };
 		E9750DB51837A1700044F9C7 /* DVTFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DVTFoundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/SharedFrameworks/DVTFoundation.framework; sourceTree = "<group>"; };
 		E9750DB61837A1700044F9C7 /* IDEFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IDEFoundation.framework; path = ../../../../../../Applications/Xcode.app/Contents/Frameworks/IDEFoundation.framework; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				E98CEAE5184A2BA500EFD95A /* blade.h */,
+				E95CA6D8185F0EC70041B42B /* blade.m */,
 				E98CEADA184A2B8400EFD95A /* NSString+XAlign.h */,
 				E98CEADB184A2B8400EFD95A /* NSString+XAlign.m */,
 				E98CEADC184A2B8400EFD95A /* XAlignPattern.h */,
@@ -253,6 +256,7 @@
 				E99A0860184A5CA400E5333A /* XAlignPluginConfig.m in Sources */,
 				E945FD06184DF37800EC90D5 /* SettingWindowController.m in Sources */,
 				E98CEAE4184A2B8400EFD95A /* SharedXcode.m in Sources */,
+				E95CA6D9185F0EC70041B42B /* blade.m in Sources */,
 				E98CEAE3184A2B8400EFD95A /* XAlignPattern.m in Sources */,
 				E98CEAE8184A2BD600EFD95A /* XAlignPlugin.m in Sources */,
 			);

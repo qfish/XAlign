@@ -41,11 +41,10 @@ AS_SINGLETON( XAlignPatternManager );
 
 + (void)setupWithRawArray:(NSArray *)array;
 
-+ (NSArray *)patternGroupsWithContentsOfFile:(NSString *)name;
-
 + (NSArray *)patternGroupsWithRawArray:(NSArray *)array;
++ (NSArray *)patternGroupsWithContentsOfFile:(NSString *)fileName;
 
-+ (NSArray *)patternGroupMatchWithString:(NSString *)string;
++ (NSArray *)patternGroupMatchedWithString:(NSString *)string;
 + (NSArray *)patternGroupWithDictinary:(NSDictionary *)dictionary;
 
 @end

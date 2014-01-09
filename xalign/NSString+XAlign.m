@@ -99,7 +99,7 @@
 				if ( XAlignPaddingModeNone == pattern.tailMode )
 					tempString = partial;
 				else
-					tempString = [partial stringByPaddingToLength:padding withString:@"+" startingAtIndex:0];
+					tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
 			}
 			else
 			{
@@ -109,7 +109,7 @@
 						if ( XAlignPaddingModeNone == pattern.headMode )
 							tempString = partial;
 						else
-							tempString = [partial stringByPaddingToLength:padding withString:@"~" startingAtIndex:0];
+							tempString = [partial stringByPaddingToLength:padding withString:@" " startingAtIndex:0];
 						break;
 					case 1: // match
 						tempString = pattern.control(padding, partial);
@@ -125,7 +125,7 @@
 		[string appendString:tempString];
 	}
 	
-	return string.xtrimTail;
+	return string;
 }
 
 - (NSString *)description
@@ -143,7 +143,7 @@
 	return [self stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
 }
 
-- (NSString *)xtrimTail
+- (NSString *)xTailTrim
 {
 	NSError * error = nil;
 	NSRegularExpression * regex = [NSRegularExpression regularExpressionWithPattern:@"\\s+$" options:NSRegularExpressionCaseInsensitive error:&error];
@@ -204,7 +204,7 @@
 	
 	for ( NSString * line in lines )
     {
-		NSString * trimLine = line.xtrimTail;
+		NSString * trimLine = line.xTailTrim;
 		
 		XAlignLine * xline = nil;
 		NSString * segment = trimLine;
@@ -364,7 +364,7 @@
 	
 	if ( error )
 	{
-		NSLog( @"[NSString+XAlign](%s): pattern is illegal. error: %@", __PRETTY_FUNCTION__, error );
+		NSLog( @"XAlign: pattern is illegal. error: %@", error );
 		return nil;
 	}
 	
@@ -374,12 +374,7 @@
 		return nil;
 	
 	NSTextCheckingResult * matchResult = nil;
-	
-	//	for ( matchResult in matches )
-	//	{
-	//		NSLog( @"|||%@|||", [self substringWithRange:NSMakeRange(0, NSMaxRange([matchResult range]))]);
-	//	}
-	
+		
 	switch ( position )
 	{
 		case XAlignPositionFisrt:

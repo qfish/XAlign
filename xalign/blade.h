@@ -5,6 +5,10 @@
 //  Copyright (c) 2013 net.QFish. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
+
+#pragma mark - Singleton
+
 #if __has_feature(objc_instancetype)
 
 #undef	AS_SINGLETON
