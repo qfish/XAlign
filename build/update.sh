@@ -16,8 +16,8 @@
 
 # Download the package and unpack it.
 
-  sudo curl -o "$PACKAGE" github.so/XAlign/build/"$PACKAGE"
-  # sudo wget github.so/XAlign/build/"$PACKAGE" -O "$PACKAGE"
+  sudo curl -o "$PACKAGE" qfi.sh/XAlign/build/"$PACKAGE"
+  # sudo wget qfi.sh/XAlign/build/"$PACKAGE" -O "$PACKAGE"
   sudo tar xzf "$PACKAGE" -C "$PLUGIN_DIR"
 
 # remove tmp files
@@ -30,5 +30,5 @@
   echo
   echo "More info: https://github.com/qfish/XAlign/"
   echo
-  echo "To uninstall XAlign, \`curl github.so/XAlign/build/uninstall.sh | sh\`"
+  echo "To uninstall XAlign, \`curl qfi.sh/XAlign/build/uninstall.sh | sh\`"
   echo "."

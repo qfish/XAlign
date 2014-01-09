@@ -15,5 +15,5 @@
   echo
   echo "XAlign is uninstalled. Thank U for using it."
   echo
-  echo "To install XAlign, \`curl github.so/XAlign/build/install.sh | sh\`"
+  echo "To install XAlign, \`curl qfi.sh/XAlign/build/install.sh | sh\`"
   echo "."
