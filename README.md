@@ -34,12 +34,12 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
    ```sh
     # install
-    $ curl qfi.sh/XAlign/build/install.sh | sh
+    $ curl http://qfi.sh/XAlign/build/install.sh | sh
 
     or
 
     # update
-    $ curl qfi.sh/XAlign/build/update.sh | sh
+    $ curl http://qfi.sh/XAlign/build/update.sh | sh
    ```
 
 ### Manually
@@ -55,7 +55,7 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ## Uninstall
 ```
-$ curl qfi.sh/XAlign/build/uninstall.sh | sh
+$ curl http://qfi.sh/XAlign/build/uninstall.sh | sh
 ```
 
 ## Usage
