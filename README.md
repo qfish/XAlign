@@ -15,13 +15,13 @@ Here are some example alignment patterns. Of course you can make your own. The p
    * 默认对齐的风格不是你喜欢的，可以自定义，或者提个 [Issues](https://github.com/qfish/XAlign/issues?state=open)。
 
 ### Align by equals sign
-![Equal](http://github.so/XAlign/images/equal.gif)
+![Equal](http://qfi.sh/XAlign/images/equal.gif)
 
 ### Align by define group
-![Define](http://github.so/XAlign/images/define.gif)
+![Define](http://qfi.sh/XAlign/images/define.gif)
 
 ### Align by property group
-![Property](http://github.so/XAlign/images/property.gif)
+![Property](http://qfi.sh/XAlign/images/property.gif)
 
 ### Todo:
 
@@ -34,12 +34,12 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
    ```sh
     # install
-    $ curl github.so/XAlign/build/install.sh | sh
+    $ curl qfi.sh/XAlign/build/install.sh | sh
 
     or
 
     # update
-    $ curl github.so/XAlign/build/update.sh | sh
+    $ curl qfi.sh/XAlign/build/update.sh | sh
    ```
 
 ### Manually
@@ -55,7 +55,7 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ## Uninstall
 ```
-$ curl github.so/XAlign/build/uninstall.sh | sh
+$ curl qfi.sh/XAlign/build/uninstall.sh | sh
 ```
 
 ## Usage
