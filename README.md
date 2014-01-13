@@ -44,7 +44,7 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ### Manually
 
-1. Download this package [XAlign.tar.gz](http://github.so/XAlign/build/XAlign.tar.gz)
+1. Download this package [XAlign.tar.gz](http://qfi.sh/XAlign/build/XAlign.tar.gz)
 2. Unpack it, copy or move the `XAlign.xcplugin` to the following path:
     ```
     ~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/
