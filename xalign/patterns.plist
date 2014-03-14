@@ -68,7 +68,7 @@
 				<key>control</key>
 				<dict>
 					<key>format</key>
-					<string> %@</string>
+					<string>%@</string>
 					<key>needFormat</key>
 					<true/>
 					<key>needTrim</key>
@@ -118,7 +118,7 @@
 				<key>control</key>
 				<dict>
 					<key>format</key>
-					<string> %@</string>
+					<string>%@</string>
 					<key>needFormat</key>
 					<true/>
 					<key>needTrim</key>
@@ -133,7 +133,7 @@
 				<key>control</key>
 				<dict>
 					<key>format</key>
-					<string> %@</string>
+					<string>%@</string>
 					<key>needFormat</key>
 					<true/>
 					<key>needTrim</key>
@@ -228,7 +228,7 @@
 				<key>control</key>
 				<dict>
 					<key>format</key>
-					<string> %@</string>
+					<string>%@</string>
 					<key>needFormat</key>
 					<true/>
 					<key>needTrim</key>
@@ -243,7 +243,7 @@
 				<key>control</key>
 				<dict>
 					<key>format</key>
-					<string> %@</string>
+					<string>%@</string>
 					<key>needFormat</key>
 					<true/>
 					<key>needTrim</key>
