@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E92FF2C918D358DE00B0C48B /* NSString+XAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = E92FF2C518D358DE00B0C48B /* NSString+XAlign.m */; };
+		E92FF2CA18D358DE00B0C48B /* patterns.plist in Resources */ = {isa = PBXBuildFile; fileRef = E92FF2C618D358DE00B0C48B /* patterns.plist */; };
+		E92FF2CB18D358DE00B0C48B /* XAlignPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = E92FF2C818D358DE00B0C48B /* XAlignPattern.m */; };
 		E9314F20184A065E00869249 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9314F1F184A065E00869249 /* CoreText.framework */; };
-		E9314F93184A1F5800869249 /* NSString+XAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = E9314F90184A1F5800869249 /* NSString+XAlign.m */; };
-		E9314F94184A1F5800869249 /* XAlignPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = E9314F92184A1F5800869249 /* XAlignPattern.m */; };
-		E945BCA1184A44AE000E90FA /* patterns.plist in Resources */ = {isa = PBXBuildFile; fileRef = E945BCA0184A44AE000E90FA /* patterns.plist */; };
 		E9C45A4C18499A7800ACB37B /* Property.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9C45A4A18499A7800ACB37B /* Property.txt */; };
 		E9C45A4D18499A7800ACB37B /* Dictionary.txt in Resources */ = {isa = PBXBuildFile; fileRef = E9C45A4B18499A7800ACB37B /* Dictionary.txt */; };
 		E9E24B051837D9950040C1B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E24B041837D9950040C1B4 /* Cocoa.framework */; };
@@ -26,12 +26,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E92FF2C418D358DE00B0C48B /* NSString+XAlign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSString+XAlign.h"; path = "../../XAlign/NSString+XAlign.h"; sourceTree = "<group>"; };
+		E92FF2C518D358DE00B0C48B /* NSString+XAlign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSString+XAlign.m"; path = "../../XAlign/NSString+XAlign.m"; sourceTree = "<group>"; };
+		E92FF2C618D358DE00B0C48B /* patterns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = patterns.plist; path = ../../XAlign/patterns.plist; sourceTree = "<group>"; };
+		E92FF2C718D358DE00B0C48B /* XAlignPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = XAlignPattern.h; path = ../../XAlign/XAlignPattern.h; sourceTree = "<group>"; };
+		E92FF2C818D358DE00B0C48B /* XAlignPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XAlignPattern.m; path = ../../XAlign/XAlignPattern.m; sourceTree = "<group>"; };
 		E9314F1F184A065E00869249 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
-		E9314F8F184A1F5800869249 /* NSString+XAlign.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+XAlign.h"; sourceTree = "<group>"; };
-		E9314F90184A1F5800869249 /* NSString+XAlign.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+XAlign.m"; sourceTree = "<group>"; };
-		E9314F91184A1F5800869249 /* XAlignPattern.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAlignPattern.h; sourceTree = "<group>"; };
-		E9314F92184A1F5800869249 /* XAlignPattern.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAlignPattern.m; sourceTree = "<group>"; };
-		E945BCA0184A44AE000E90FA /* patterns.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = patterns.plist; sourceTree = "<group>"; };
 		E9C45A4A18499A7800ACB37B /* Property.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Property.txt; sourceTree = "<group>"; };
 		E9C45A4B18499A7800ACB37B /* Dictionary.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Dictionary.txt; sourceTree = "<group>"; };
 		E9E24B011837D9950040C1B4 /* main.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = main.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -67,22 +67,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E9314F8E184A1F5800869249 /* xalign */ = {
+		E92FF2C318D358C800B0C48B /* XAlign */ = {
 			isa = PBXGroup;
 			children = (
-				E9314F8F184A1F5800869249 /* NSString+XAlign.h */,
-				E9314F90184A1F5800869249 /* NSString+XAlign.m */,
-				E9314F91184A1F5800869249 /* XAlignPattern.h */,
-				E9314F92184A1F5800869249 /* XAlignPattern.m */,
+				E92FF2C418D358DE00B0C48B /* NSString+XAlign.h */,
+				E92FF2C518D358DE00B0C48B /* NSString+XAlign.m */,
+				E92FF2C618D358DE00B0C48B /* patterns.plist */,
+				E92FF2C718D358DE00B0C48B /* XAlignPattern.h */,
+				E92FF2C818D358DE00B0C48B /* XAlignPattern.m */,
 			);
-			name = xalign;
-			path = ../xalign;
+			name = XAlign;
 			sourceTree = "<group>";
 		};
 		E9E24AF81837D9950040C1B4 = {
 			isa = PBXGroup;
 			children = (
-				E9314F8E184A1F5800869249 /* xalign */,
+				E92FF2C318D358C800B0C48B /* XAlign */,
 				E9E24B0A1837D9950040C1B4 /* main */,
 				E9E24B031837D9950040C1B4 /* Frameworks */,
 				E9E24B021837D9950040C1B4 /* Products */,
@@ -123,7 +123,6 @@
 			children = (
 				E9E24B161837D9960040C1B4 /* AppDelegate.h */,
 				E9E24B171837D9960040C1B4 /* AppDelegate.m */,
-				E945BCA0184A44AE000E90FA /* patterns.plist */,
 				E9E24B381837D9CA0040C1B4 /* EqualSign.txt */,
 				E9EF7F0F1847A09A00F2C5D5 /* Define.txt */,
 				E9EF7F101847A09A00F2C5D5 /* Variable.txt */,
@@ -209,7 +208,7 @@
 				E9EF7F121847A09A00F2C5D5 /* Variable.txt in Resources */,
 				E9C45A4D18499A7800ACB37B /* Dictionary.txt in Resources */,
 				E9E24B1B1837D9960040C1B4 /* MainMenu.xib in Resources */,
-				E945BCA1184A44AE000E90FA /* patterns.plist in Resources */,
+				E92FF2CA18D358DE00B0C48B /* patterns.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -222,8 +221,8 @@
 			files = (
 				E9E24B181837D9960040C1B4 /* AppDelegate.m in Sources */,
 				E9E24B111837D9960040C1B4 /* main.m in Sources */,
-				E9314F93184A1F5800869249 /* NSString+XAlign.m in Sources */,
-				E9314F94184A1F5800869249 /* XAlignPattern.m in Sources */,
+				E92FF2C918D358DE00B0C48B /* NSString+XAlign.m in Sources */,
+				E92FF2CB18D358DE00B0C48B /* XAlignPattern.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

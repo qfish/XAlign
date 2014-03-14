@@ -1,0 +1,15 @@
+@property (nonatomic, retain) UITextField * textView;
+@property (nonatomic, retain) UIButton    editButton;
+@property (nonatomic, assign) int         editButton;
+@property (nonatomic, copy  ) UIButton    * editButton;
+@property (nonatomic,retain ) UITextField * password;
+@property (nonatomic,retain ) UITextField * username;
+@property (nonatomic,retain ) UIView      * loginView;
+@property (nonatomic,retain ) UIButton    * registerButton;
+@property (nonatomic,retain ) UIButton    * _autoLoginbutton;
+@property (nonatomic,retain ) UIButton    * forgetPasswordButton;
+
+@property (nonatomic,retain) IBOutlet UITextField *loginButton;
+@property (nonatomic,retain) IBOutlet UIButton    *loginButton;
+@property (nonatomic,retain) IBOutlet int          _loginButton;
+@property (nonatomic,retain) IBOutlet UIButton    *loginButton;

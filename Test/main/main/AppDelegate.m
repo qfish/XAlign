@@ -14,14 +14,14 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-//	[self testEqualSign];
-//	[self testPatterns:0 file:@"EqualSign.txt"];
+	[self testEqualSign];
+	[self testPatterns:0 file:@"EqualSign.txt"];
 	
 //	[self testDefine];
 //	[self testPatterns:1 file:@"Define.txt"];
 	
-	[self testProperty];
-	[self testPatterns:2 file:@"Property.txt"];
+//	[self testProperty];
+//	[self testPatterns:2 file:@"Property.txt"];
 
 //	[self testVariable];
 //	[self testPatterns:3 file:@"Variable.txt"];

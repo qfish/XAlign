@@ -11,3 +11,8 @@ waveLayer.frame    = (CGRect){
     .size.width  = 40,
     .size.height = 40
 };
+
+static NSString *const PVideoAPIURLString = @"http://10.61.32.63/v1/";
+
+static NSString *const PUserContextUserId = @"Present-User-Context-User-Id";
+static NSString *const PUserContextSessionToken = @"Present-User-Context-Session-Token";
