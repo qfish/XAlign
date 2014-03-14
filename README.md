@@ -25,7 +25,6 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ### Todo:
 
-- [x] Support Xcode4.
 - [x] More easy to customize alignment patterns.
 
 ## Install & Update
