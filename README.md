@@ -5,7 +5,7 @@ An amazing Xcode plugin to align regular code. It can align anything by using cu
 
 ## What's XAlign
 
-Here are some example alignment patterns. Of course you can make your own. The pattern file is here:  `main/main/patterns.plist`, and the patterns are based on regular expression.
+Here are some example alignment patterns. Of course you can make your own. The pattern file is here:  `XAlign/patterns.plist`, and the patterns are based on regular expression.
 
 **Tips**: 
 
