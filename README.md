@@ -29,6 +29,14 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ## Install & Update
 
+### Via source
+
+1. Clone the repo  `git clone git@github.com:qfish/XAlign.git`
+
+2. Then build the `XAlign` target in the Xcode project and the plug-in will automatically be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`
+
+3. Restart Xcode.
+
 ### Via command-line
 
    ```sh
