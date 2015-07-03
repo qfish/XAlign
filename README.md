@@ -86,6 +86,13 @@ You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> S
 ## Trouble-Shooting
   
   * [wiki](https://github.com/qfish/XAlign/wiki)
+  * New version Xcode ?
+    Try this in your terminal : 
+   
+    ```shell
+    XCODEUUID=`defaults read /Applications/Xcode.app/Contents/Info DVTPlugInCompatibilityUUID`
+    for f in ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/*; do defaults write "$f/Contents/Info"       DVTPlugInCompatibilityUUIDs -array-add $XCODEUUID; done
+    ```
    
 ## Want to help
   
