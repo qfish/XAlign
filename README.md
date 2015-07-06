@@ -86,7 +86,8 @@ You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> S
 ## Trouble-Shooting
   
   * [wiki](https://github.com/qfish/XAlign/wiki)
-  * New version Xcode ? Try this in your terminal : 
+  
+### New version Xcode ? Try this in your terminal : 
   
   1. Get current Xcode UUID  
   
