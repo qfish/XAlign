@@ -99,6 +99,7 @@ You can choose the shortcut in the Settings panel, `Xcode -> Edit -> XAlign -> S
   ```shell
   for f in ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/*; do defaults write "$f/Contents/Info" DVTPlugInCompatibilityUUIDs -array-add $XCODEUUID; done
   ```
+  3. Restart your Xcode, and select <kbd>Load Bundles</kbd> on the alert
    
 ## Want to help
   
