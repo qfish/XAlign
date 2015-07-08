@@ -25,7 +25,7 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ### Todo:
 
-- [x] More easy to customize alignment patterns.
+- [x] Much easier to customize alignment patterns.
 
 ## Install & Update
 
