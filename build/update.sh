@@ -1,35 +1,27 @@
-# Set up the environment.
+#!/usr/bin/env bash
 
-    PACKAGE="XAlign.tar.gz"
-    PLUGIN_DIR="$HOME/Library/Application Support/Developer/Shared/Xcode/Plug-ins"
-    XALIGN_PATH="$PLUGIN_DIR/XAlign.xcplugin"
-    DOMAIN="http://qfi.sh"
+echo ""
+echo "Downloading XAlign..."
 
-# check path, create dir if not exist, remove id 
-    
-    if [ ! -d "$PLUGIN_DIR" ]; then
-       sudo mkdir -p "$PLUGIN_DIR"
-    else
-        if [ -d "$PLUGIN_DIR" ]; then
-          sudo rm -rf "$XALIGN_PATH"
-        fi
-    fi
+# Prepare
+mkdir -p /var/tmp/XAlign.tmp && cd /var/tmp/XAlign.tmp
 
-# Download the package and unpack it.
+echo ""
+# Clone from git
+git clone https://github.com/qfish/XAlign.git --depth 1 /var/tmp/XAlign.tmp > /dev/null
 
-  sudo curl -o "$PACKAGE" $DOMAIN/XAlign/build/"$PACKAGE"
-  # sudo wget $DOMAIN/XAlign/build/"$PACKAGE" -O "$PACKAGE"
-  sudo tar xzf "$PACKAGE" -C "$PLUGIN_DIR"
+echo ""
+echo "Installing XAlign..."
 
-# remove tmp files
-  
-  sudo rm -rf "$PACKAGE"
+# Then build
+xcodebuild clean > /dev/null
+xcodebuild > /dev/null
 
-# done 
-  echo
-  echo "XAlign is update. Please Restart Your Xcode."
-  echo
-  echo "More info: https://github.com/qfish/XAlign/"
-  echo
-  echo "To uninstall XAlign, \`curl $DOMAIN/XAlign/build/uninstall.sh | sh\`"
-  echo "."
+# Remove tmp files
+cd ~
+rm -rf /var/tmp/XAlign.tmp
+
+# Done
+echo ""
+echo "XAlign successfully updated! 🍻 Please restart your Xcode."
+echo ""
