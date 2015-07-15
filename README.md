@@ -31,7 +31,7 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ### Via source
 
-1. Clone the repo  `git clone git@github.com:qfish/XAlign.git`
+1. Clone this repo
 
 2. Then build the `XAlign` target in the Xcode project and the plug-in will automatically be installed in `~/Library/Application Support/Developer/Shared/Xcode/Plug-ins`
 
@@ -39,15 +39,9 @@ Here are some example alignment patterns. Of course you can make your own. The p
 
 ### Via command-line
 
-   ```sh
-    # install
-    $ curl http://qfi.sh/XAlign/build/install.sh | sh
-
-    or
-
-    # update
-    $ curl http://qfi.sh/XAlign/build/update.sh | sh
-   ```
+```shell
+curl -fsSL http://qfi.sh/XAlign/build/install.sh | sh
+```
 
 ### Manually
 
@@ -61,14 +55,14 @@ Here are some example alignment patterns. Of course you can make your own. The p
 3. Restart Xcode.
 
 ## Uninstall
-```
-$ curl http://qfi.sh/XAlign/build/uninstall.sh | sh
+```shell
+curl -fsSL http://qfi.sh/XAlign/build/uninstall.sh | sh
 ```
 
 or Delete the following directory:
 
 ```
-$HOME/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/XAlign.xcplugin
+~/Library/Application Support/Developer/Shared/Xcode/Plug-ins/XAlign.xcplugin
 ```
 
 ## Usage
