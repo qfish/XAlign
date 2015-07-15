@@ -23,5 +23,5 @@ rm -rf /var/tmp/XAlign.tmp
 
 # Done
 echo ""
-echo "XAlign successfully installed! 🍻 Please restart your Xcode."
+echo "XAlign successfully installed! 🍻   Please restart your Xcode."
 echo ""
