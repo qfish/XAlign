@@ -1,5 +1,21 @@
 #!/usr/bin/env bash
 
+# Set up the environment.
+
+PLUGIN_DIR="$HOME/Library/Application Support/Developer/Shared/Xcode/Plug-ins"
+XALIGN_PATH="$PLUGIN_DIR/XAlign.xcplugin"
+DOMAIN="http://qfi.sh"
+
+# check path, remove if exist
+
+if [ -d "$PLUGIN_DIR" ]; then
+    if [ -d "$XALIGN_PATH" ]; then
+        echo ""
+        echo "Remove $XALIGN_PATH"
+        rm -rf "$XALIGN_PATH"
+    fi
+fi
+
 echo ""
 echo "Downloading XAlign..."
 
