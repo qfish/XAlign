@@ -19,7 +19,6 @@
 		E93E2AC21DCB914400F7BEA4 /* NSString+XAlign.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E2ABF1DCB914400F7BEA4 /* NSString+XAlign.m */; };
 		E93E2AC31DCB914400F7BEA4 /* XAlignPattern.m in Sources */ = {isa = PBXBuildFile; fileRef = E93E2AC11DCB914400F7BEA4 /* XAlignPattern.m */; };
 		E93E2AC51DCB93FA00F7BEA4 /* Patterns.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E93E2AC41DCB93FA00F7BEA4 /* Patterns.bundle */; };
-		E93E2AC61DCB93FA00F7BEA4 /* Patterns.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E93E2AC41DCB93FA00F7BEA4 /* Patterns.bundle */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -268,7 +267,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E93E2AC61DCB93FA00F7BEA4 /* Patterns.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
