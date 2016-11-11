@@ -3,7 +3,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11542"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-        <capability name="system font weights other than Regular or Bold" minToolsVersion="7.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -687,10 +686,10 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2KF-os-aQO">
-                                <rect key="frame" x="-2" y="97" width="236" height="24"/>
+                                <rect key="frame" x="-2" y="101" width="236" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="You can close it now." id="nbt-gn-aRc">
-                                    <font key="font" metaFont="system" size="18"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="You Can Quit it Now" id="nbt-gn-aRc">
+                                    <font key="font" metaFont="system" size="22"/>
                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -699,7 +698,7 @@
                                 <rect key="frame" x="41" y="9" width="173" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Wechat :  QFishx   Weibo :  QFish为人民服务       Mail :  im@qfi.sh" id="rlm-Cj-uuy">
-                                    <font key="font" metaFont="systemUltraLight" size="12"/>
+                                    <font key="font" metaFont="system" size="12"/>
                                     <color key="textColor" name="knobColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -708,7 +707,7 @@
                                 <rect key="frame" x="39" y="60" width="160" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Made by QFish with &lt;3." id="d4S-YN-NQ8">
-                                    <font key="font" metaFont="systemUltraLight" size="14"/>
+                                    <font key="font" metaFont="system" size="14"/>
                                     <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
