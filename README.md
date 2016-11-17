@@ -45,12 +45,12 @@ Check <kbd>System Preferences</kbd> -> <kbd>Extensions</kbd> -> <kbd>Xocde Sourc
 
 ## Trouble Shooting
 * Please `run sudo /usr/libexec/xpccachectl` and **restart your Mac** before running the extension if you are on macOS 10.11 El Capitan.
-* If you are looking for the version supporting Xcode 7, check this branch;
+* If you are looking for the version supporting Xcode 7, check this [branch](https://github.com/qfish/XAlign/tree/Xcode%3C8);
 
 ## Want to help
   
   * [Star this repository](https://github.com/qfish/XAlign/)
-  * [Bugs Report & Advice](https://github.com/qfish/XAlign/issues)
+  * [Bug report & Advice](https://github.com/qfish/XAlign/issues)
   * [Fork & Pull Request](https://github.com/qfish/XAlign/pulls)
 
 ## Special thanks to
