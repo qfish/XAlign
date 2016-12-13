@@ -44,7 +44,7 @@ Check <kbd>System Preferences</kbd> -> <kbd>Extensions</kbd> -> <kbd>Xocde Sourc
    ![help-2](https://cloud.githubusercontent.com/assets/679824/20146079/735244ca-a6dd-11e6-83a9-069fd489b0f6.png)
 
 ## Trouble Shooting
-* Please `run sudo /usr/libexec/xpccachectl` and **restart your Mac** before running the extension if you are on macOS 10.11 El Capitan.
+* Please install macOS Sierra (version 10.12) if your macOS is 10.11.
 * If you are looking for the version supporting Xcode 7, check this [branch](https://github.com/qfish/XAlign/tree/Xcode%3C8);
 
 ## Want to help
